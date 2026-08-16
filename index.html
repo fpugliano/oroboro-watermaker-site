@@ -552,10 +552,59 @@
     .footer__legal { display: flex; gap: 18px; }
     .footer__legal a { font-size: 0.72rem; color: rgba(255,255,255,0.18); text-decoration: none; }
 
+    /* ——— What it is ——— */
+    .section--whatitis { background: var(--navy); padding: 72px 0; }
+    .whatitis__inner { max-width: 760px; margin: 0 auto; text-align: center; }
+    .whatitis__desc {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      font-style: italic;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 1.75rem;
+    }
+    .whatitis__desc::before { content: '\201C'; color: var(--gold); }
+    .whatitis__desc::after { content: '\201D'; color: var(--gold); }
+    .whatitis__expand { font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.45); max-width: 640px; margin: 0 auto; }
+
+    /* ——— Components ——— */
+    .section--components { background: var(--bg-alt); }
+    .components__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .comp-card { border-radius: var(--radius); overflow: hidden; background: var(--bg); border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s; }
+    .comp-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+    .comp-card__img { width: 100%; height: 150px; object-fit: cover; display: block; background: var(--bg-alt); }
+    .comp-card__body { padding: 12px 14px 14px; }
+    .comp-card__name { font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 3px; letter-spacing: -0.01em; }
+    .comp-card__spec { font-size: 0.7rem; color: var(--muted); line-height: 1.4; }
+    .components__note { font-size: 0.72rem; color: var(--muted); text-align: center; font-style: italic; }
+
+    /* ——— Name ——— */
+    .section--name { background: var(--bg); }
+    .name__inner { max-width: 680px; margin: 0 auto; }
+    .name__h {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+    .name__h span { color: var(--gold); font-style: italic; }
+    .name__body { font-size: 1rem; line-height: 1.8; color: var(--muted); }
+    .name__body p + p { margin-top: 1.1rem; }
+    .name__greek { font-size: 1.6rem; font-style: italic; color: var(--gold); font-family: Georgia, serif; display: block; margin-bottom: 0.5rem; }
+
     /* ——— Responsive ——— */
     @media (max-width: 768px) {
       .section { padding: 64px 0; }
       .problem__grid, .features__grid, .compare__grid, .specs__grid { grid-template-columns: 1fr; gap: 24px; }
+      .components__grid { grid-template-columns: repeat(2, 1fr); }
       .hero__stats { gap: 24px; }
       .hero__stat-num { font-size: 1.5rem; }
       .cta__form { flex-direction: column; }
@@ -640,6 +689,17 @@
     <span class="strip__item">Made in Athens</span>
   </div>
 </div>
+
+<!-- What it is -->
+<section class="section--whatitis">
+  <div class="container">
+    <div class="whatitis__inner">
+      <span class="eyebrow">What it is</span>
+      <p class="whatitis__desc">A 220V AC marine reverse osmosis watermaker assembled from generic industrial and semi-industrial components, targeting a significant cost reduction versus branded units while maintaining performance and reliability.</p>
+      <p class="whatitis__expand">That is the honest one-sentence description. A seawater pump, a membrane, a housing, some valves, and a motor controller — all sourced direct from the manufacturers who make them. No proprietary parts. No brand premium. Assembled, tested, and supported by a sailor who has done 30,000 miles and knows what actually needs to work at sea.</p>
+    </div>
+  </div>
+</section>
 
 <!-- Problem -->
 <section class="section" id="how">
@@ -886,6 +946,85 @@
   </div>
 </section>
 
+<!-- Components -->
+<section class="section section--components" id="components">
+  <div class="container">
+    <div class="section__header">
+      <span class="eyebrow">The parts</span>
+      <h2 class="section__title">Off-the-shelf. Industrial grade. Global stock.</h2>
+      <p class="section__sub">Every component is a standard catalogue part from an established manufacturer. Nothing proprietary. Nothing that requires a specialist to source or replace.</p>
+    </div>
+
+    <div class="components__grid">
+      <div class="comp-card">
+        <img class="comp-card__img" src="https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?w=600&q=80&fit=crop&crop=center" alt="High pressure pump" loading="lazy">
+        <div class="comp-card__body">
+          <div class="comp-card__name">High Pressure Pump</div>
+          <div class="comp-card__spec">AR JRA2.2 — Annovi Reverberi, Modena, Italy. Ceramic triplex plunger, no oil.</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <img class="comp-card__img" src="https://images.unsplash.com/photo-1692719094491-2746e82a8595?w=600&q=80&fit=crop&crop=center" alt="Motor and VFD" loading="lazy">
+        <div class="comp-card__body">
+          <div class="comp-card__name">Motor + VFD</div>
+          <div class="comp-card__spec">WEG 1.1kW 3-phase + Schneider ATV12. Single-phase in, full 60Hz out.</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <img class="comp-card__img" src="https://images.unsplash.com/photo-1698031610493-c19fa20dfeab?w=600&q=80&fit=crop&crop=center" alt="High pressure needle valve" loading="lazy">
+        <div class="comp-card__body">
+          <div class="comp-card__name">HP Needle Valve</div>
+          <div class="comp-card__spec">Ham-Let H300U SS316L. 344 bar rated. 3/8" BSPP. Global distributor network.</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <img class="comp-card__img" src="https://images.unsplash.com/photo-1563062067-6d3e3add387d?w=600&q=80&fit=crop&crop=center" alt="Pressure gauges" loading="lazy">
+        <div class="comp-card__body">
+          <div class="comp-card__name">Pressure Gauges</div>
+          <div class="comp-card__spec">0–200 bar HP + 0–10 bar LP. Glycerine-filled. Stainless Bourdon tube.</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <img class="comp-card__img" src="https://cdn.pixabay.com/photo/2016/08/10/19/24/tds-meter-1584110_1280.jpg" alt="TDS meter" loading="lazy">
+        <div class="comp-card__body">
+          <div class="comp-card__name">TDS Meter</div>
+          <div class="comp-card__spec">Hand-held digital. Confirms permeate quality. Target: &lt;500 ppm from seawater.</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <img class="comp-card__img" src="https://images.unsplash.com/photo-1648224395403-64ccaba16e48?w=600&q=80&fit=crop&crop=center" alt="Flow meter" loading="lazy">
+        <div class="comp-card__body">
+          <div class="comp-card__name">Flow Meter</div>
+          <div class="comp-card__spec">Inline on permeate outlet. Reads L/min in real time. Tracks membrane health.</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <img class="comp-card__img" src="https://images.pexels.com/photos/5506046/pexels-photo-5506046.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pre-filter housings" loading="lazy">
+        <div class="comp-card__body">
+          <div class="comp-card__name">Pre-Filter Housings</div>
+          <div class="comp-card__spec">Big Blue 10" × 4.5". Two stage: 20µm then 5µm wound polypropylene. ~€15–25 each.</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <img class="comp-card__img" src="https://images.unsplash.com/photo-1769695832228-ab959c7c7e0d?w=600&q=80&fit=crop&crop=center" alt="Membrane vessel" loading="lazy">
+        <div class="comp-card__body">
+          <div class="comp-card__name">Membrane Vessel</div>
+          <div class="comp-card__spec">FRP 2540 — 1,000 PSI rated. Holds Dow FilmTec SW30-2540 or SW30-2521.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="components__note">Prototype photography in progress. Images shown are representative of component categories.</p>
+  </div>
+</section>
+
 <!-- Founder -->
 <section class="section section--founder">
   <div class="container">
@@ -898,6 +1037,21 @@
           <div class="founder__name">Francesco Pugliano</div>
           <div class="founder__role">Founder, Oroboro Watermaker LLC · 30,000 NM · Athens, Greece</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Name story -->
+<section class="section section--name">
+  <div class="container">
+    <div class="name__inner">
+      <span class="eyebrow">The name</span>
+      <h2 class="name__h">Oroboro.<br><span>The eternal cycle.</span></h2>
+      <div class="name__body">
+        <p><span class="name__greek">ουρόβορος</span>The ouroboros is an ancient Greek symbol — a serpent eating its own tail, forming a perfect circle. It represents the eternal cycle: self-renewal, endless return, the thing that feeds itself forever.</p>
+        <p>We chose it because a watermaker is the closest thing to that eternal cycle that exists aboard a boat. The sea is infinite. Our system draws from it as long as you sail. The water you make eventually returns to the sea. The cycle closes, and begins again.</p>
+        <p>It is also the simplest expression of what independence at sea actually means: not needing the shore for something as fundamental as drinking water. The serpent feeds itself. So do you.</p>
       </div>
     </div>
   </div>
