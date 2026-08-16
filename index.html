@@ -571,7 +571,7 @@
     .section--components { background: var(--bg-alt); }
     .components__grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin-bottom: 18px;
     }
@@ -957,7 +957,23 @@
 
     <div class="components__grid">
       <div class="comp-card">
-        <img class="comp-card__img" src="https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?w=600&q=80&fit=crop&crop=center" alt="High pressure pump" loading="lazy">
+        <img class="comp-card__img" src="boostpump.png" alt="Boost pump" loading="lazy">
+        <div class="comp-card__body">
+          <div class="comp-card__name">Boost Pump</div>
+          <div class="comp-card__spec">12V DC self-priming pump. Pulls seawater through the pre-filters and feeds the HP pump inlet at the right pressure.</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <img class="comp-card__img" src="filterhousing.png" alt="Pre-filter housings" loading="lazy">
+        <div class="comp-card__body">
+          <div class="comp-card__name">Pre-Filter Housings</div>
+          <div class="comp-card__spec">Big Blue 10" × 4.5". Two stage: 20µm then 5µm wound polypropylene. Protects the HP pump and membrane.</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <img class="comp-card__img" src="HighPressurePump.png" alt="High pressure pump" loading="lazy">
         <div class="comp-card__body">
           <div class="comp-card__name">High Pressure Pump</div>
           <div class="comp-card__spec">Italian ceramic triplex plunger pump from Modena. Water-lubricated, no oil, no maintenance schedule.</div>
@@ -965,63 +981,53 @@
       </div>
 
       <div class="comp-card">
-        <img class="comp-card__img" src="https://images.unsplash.com/photo-1692719094491-2746e82a8595?w=600&q=80&fit=crop&crop=center" alt="Motor and VFD" loading="lazy">
+        <img class="comp-card__img" src="motor.png" alt="Three-phase motor" loading="lazy">
         <div class="comp-card__body">
-          <div class="comp-card__name">Motor + VFD</div>
-          <div class="comp-card__spec">1.1kW industrial three-phase motor with variable frequency drive. Single-phase 230V in, full 60Hz out.</div>
+          <div class="comp-card__name">Motor</div>
+          <div class="comp-card__spec">Industrial 1.1kW three-phase motor. Runs at full rated speed via the VFD, driven by your boat's 230V inverter.</div>
         </div>
       </div>
 
       <div class="comp-card">
-        <img class="comp-card__img" src="https://images.unsplash.com/photo-1698031610493-c19fa20dfeab?w=600&q=80&fit=crop&crop=center" alt="High pressure needle valve" loading="lazy">
+        <img class="comp-card__img" src="AFD.png" alt="Variable frequency drive" loading="lazy">
+        <div class="comp-card__body">
+          <div class="comp-card__name">Variable Frequency Drive</div>
+          <div class="comp-card__spec">Adjustable frequency drive — single-phase 230V in, three-phase 60Hz out. Soft start. Adjustable 30–60Hz for solar-only running.</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <img class="comp-card__img" src="highpresssurevalve.png" alt="High pressure needle valve" loading="lazy">
         <div class="comp-card__body">
           <div class="comp-card__name">HP Needle Valve</div>
-          <div class="comp-card__spec">SS316L high-pressure needle valve, 344 bar rated, 3/8" BSPP ports. Available from marine and industrial suppliers worldwide.</div>
+          <div class="comp-card__spec">SS316L high-pressure needle valve, 344 bar rated, 3/8" BSPP ports. Controls system pressure and output flow.</div>
         </div>
       </div>
 
       <div class="comp-card">
-        <img class="comp-card__img" src="https://images.unsplash.com/photo-1563062067-6d3e3add387d?w=600&q=80&fit=crop&crop=center" alt="Pressure gauges" loading="lazy">
+        <img class="comp-card__img" src="membrane.png" alt="RO membrane element" loading="lazy">
         <div class="comp-card__body">
-          <div class="comp-card__name">Pressure Gauges</div>
-          <div class="comp-card__spec">0–200 bar HP + 0–10 bar LP. Glycerine-filled. Stainless Bourdon tube.</div>
+          <div class="comp-card__name">RO Membrane</div>
+          <div class="comp-card__spec">Standard 2.5" seawater reverse osmosis element. 700 GPD rated. Target permeate TDS: under 500 ppm from open ocean.</div>
         </div>
       </div>
 
       <div class="comp-card">
-        <img class="comp-card__img" src="https://cdn.pixabay.com/photo/2016/08/10/19/24/tds-meter-1584110_1280.jpg" alt="TDS meter" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">TDS Meter</div>
-          <div class="comp-card__spec">Hand-held digital. Confirms permeate quality. Target: &lt;500 ppm from seawater.</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <img class="comp-card__img" src="https://images.unsplash.com/photo-1648224395403-64ccaba16e48?w=600&q=80&fit=crop&crop=center" alt="Flow meter" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">Flow Meter</div>
-          <div class="comp-card__spec">Inline on permeate outlet. Reads L/min in real time. Tracks membrane health.</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <img class="comp-card__img" src="https://images.pexels.com/photos/5506046/pexels-photo-5506046.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pre-filter housings" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">Pre-Filter Housings</div>
-          <div class="comp-card__spec">Big Blue 10" × 4.5". Two stage: 20µm then 5µm wound polypropylene. ~€15–25 each.</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <img class="comp-card__img" src="https://images.unsplash.com/photo-1769695832228-ab959c7c7e0d?w=600&q=80&fit=crop&crop=center" alt="Membrane vessel" loading="lazy">
+        <img class="comp-card__img" src="pressurevessel.png" alt="Membrane pressure vessel" loading="lazy">
         <div class="comp-card__body">
           <div class="comp-card__name">Membrane Vessel</div>
-          <div class="comp-card__spec">FRP 2540 format — 1,000 PSI rated. Holds any standard 2.5" × 40" seawater RO membrane.</div>
+          <div class="comp-card__spec">FRP 2540 format — 1,000 PSI rated. Holds any standard 2.5" × 40" seawater RO membrane element.</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <img class="comp-card__img" src="flowmeter.png" alt="Flow meter" loading="lazy">
+        <div class="comp-card__body">
+          <div class="comp-card__name">Flow Meter</div>
+          <div class="comp-card__spec">Inline on permeate outlet. Reads L/min in real time. Tracks membrane health and confirms rated output.</div>
         </div>
       </div>
     </div>
-
-    <p class="components__note">Prototype photography in progress. Images shown are representative of component categories.</p>
   </div>
 </section>
 
