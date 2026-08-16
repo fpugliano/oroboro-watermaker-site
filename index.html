@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oroboro Watermaker — Coming to the Mediterranean</title>
+  <meta name="description" content="Industrial-grade marine RO watermaker built from direct-sourced European components. From €2,990. Launching Mediterranean 2025.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #0071E3;
+      --gold: #c8b89a;
+      --navy: #0B1426;
+      --navy-deep: #070e1a;
+      --bg: #FFFFFF;
+      --bg-alt: #F5F5F7;
+      --text: #1D1D1F;
+      --muted: #6E6E73;
+      --border: #D2D2D7;
+      --green: #34C759;
+      --radius: 14px;
+      --radius-lg: 20px;
+      --max-w: 1080px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ——— Typography ——— */
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .eyebrow--blue { color: var(--accent); }
+
+    /* ——— Layout ——— */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; }
+    .section__header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
+    .section__title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .section__sub { font-size: 1rem; line-height: 1.65; color: var(--muted); }
+
+    /* ——— Buttons ——— */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 24px;
+      border-radius: 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      letter-spacing: -0.01em;
+    }
+    .btn--primary { background: var(--accent); color: #fff; }
+    .btn--primary:hover { background: #0062c3; transform: translateY(-1px); }
+    .btn--outline { background: transparent; color: rgba(255,255,255,0.85); border: 1.5px solid rgba(255,255,255,0.25); }
+    .btn--outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+    .btn--gold { background: var(--gold); color: var(--navy-deep); }
+    .btn--gold:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn--dark { background: var(--text); color: #fff; }
+    .btn--dark:hover { opacity: 0.85; }
+
+    /* ——— Nav ——— */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 60px;
+      background: rgba(7, 14, 26, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav__brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav__mark { width: 26px; height: 26px; color: var(--gold); }
+    .nav__name { font-size: 0.88rem; font-weight: 600; color: #fff; letter-spacing: 0.01em; }
+    .nav__name span { color: var(--gold); }
+    .nav__cta {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      border-radius: 20px;
+      padding: 7px 16px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav__cta:hover { opacity: 0.85; }
+
+    /* ——— Hero ——— */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(155deg, var(--navy-deep) 0%, var(--navy) 55%, #0d2040 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 24px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 85%, rgba(0,113,227,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero__waves {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      opacity: 0.06;
+      pointer-events: none;
+    }
+    .hero__content { position: relative; z-index: 1; max-width: 760px; }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,184,154,0.1);
+      border: 1px solid rgba(200,184,154,0.22);
+      border-radius: 20px;
+      padding: 6px 14px;
+      margin-bottom: 2rem;
+    }
+    .hero__badge-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.25; }
+    }
+    .hero__badge-text {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.6rem, 6vw, 4.6rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+
+    .hero__sub {
+      font-size: clamp(1rem, 2vw, 1.12rem);
+      font-weight: 400;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+    }
+
+    .hero__stats {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.09);
+    }
+    .hero__stat { text-align: center; }
+    .hero__stat-num {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .hero__stat-label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 5px;
+    }
+
+    /* ——— Strip ——— */
+    .strip { background: var(--gold); overflow: hidden; padding: 11px 0; }
+    .strip__track {
+      display: flex;
+      animation: marquee 32s linear infinite;
+      white-space: nowrap;
+      width: max-content;
+    }
+    .strip__item {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy-deep);
+      padding: 0 28px;
+    }
+    .strip__item::after { content: '·'; margin-left: 28px; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ——— Problem ——— */
+    .problem__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .problem__heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    .problem__heading em { font-style: italic; color: var(--accent); }
+    .problem__body { font-size: 0.97rem; line-height: 1.75; color: var(--muted); }
+    .problem__body p + p { margin-top: 1rem; }
+
+    .callouts { display: flex; flex-direction: column; gap: 16px; }
+    .callout {
+      padding: 18px 22px;
+      border-radius: var(--radius);
+      border-left: 3px solid;
+    }
+    .callout--bad { background: #fff4f4; border-color: #e34040; }
+    .callout--good { background: rgba(200,184,154,0.1); border-color: var(--gold); }
+    .callout__title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .callout--bad .callout__title { color: #c03030; }
+    .callout--good .callout__title { color: #8a7058; }
+    .callout__body { font-size: 0.86rem; line-height: 1.6; color: var(--muted); }
+
+    /* ——— Features ——— */
+    .section--features { background: var(--bg-alt); }
+    .features__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
+    .feature-card__icon {
+      font-size: 1.5rem;
+      width: 52px; height: 52px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .icon--blue { background: rgba(0,113,227,0.09); }
+    .icon--gold { background: rgba(200,184,154,0.14); }
+    .icon--green { background: rgba(52,199,89,0.09); }
+    .icon--purple { background: rgba(175,82,222,0.09); }
+
+    .feature-card__tag {
+      display: inline-block;
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      color: var(--accent);
+      background: rgba(0,113,227,0.08);
+    }
+    .feature-card__tag--gold { color: #8a7058; background: rgba(200,184,154,0.14); }
+    .feature-card__title { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 10px; letter-spacing: -0.02em; }
+    .feature-card__body { font-size: 0.88rem; line-height: 1.68; color: var(--muted); }
+
+    /* ——— Compare ——— */
+    .section--compare { background: var(--navy); }
+    .section--compare .section__title { color: #fff; }
+    .section--compare .section__sub { color: rgba(255,255,255,0.45); }
+    .compare__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .compare-card { border-radius: var(--radius-lg); padding: 32px; border: 1px solid; }
+    .compare-card--them { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); }
+    .compare-card--us { background: rgba(200,184,154,0.06); border-color: rgba(200,184,154,0.18); }
+
+    .compare-card__label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .compare-card--them .compare-card__label { color: rgba(255,255,255,0.28); }
+    .compare-card--us .compare-card__label { color: var(--gold); }
+    .compare-card__label-dot { width: 6px; height: 6px; border-radius: 50%; }
+    .compare-card--them .compare-card__label-dot { background: rgba(255,255,255,0.2); }
+    .compare-card--us .compare-card__label-dot { background: var(--gold); box-shadow: 0 0 8px rgba(200,184,154,0.4); }
+
+    .compare-card__name { font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 24px; letter-spacing: -0.02em; }
+
+    .compare-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+    .compare-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.86rem; line-height: 1.5; }
+    .compare-card--them .compare-list li { color: rgba(255,255,255,0.4); }
+    .compare-card--us .compare-list li { color: rgba(255,255,255,0.75); }
+    .cli { flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 800; margin-top: 1px; }
+    .compare-card--them .cli { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.25); }
+    .compare-card--us .cli { background: rgba(52,199,89,0.14); color: var(--green); }
+
+    .compare-card__price {
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid;
+    }
+    .compare-card--them .compare-card__price { border-color: rgba(255,255,255,0.07); }
+    .compare-card--us .compare-card__price { border-color: rgba(200,184,154,0.18); }
+    .compare-card__price-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .compare-card--them .compare-card__price-label { color: rgba(255,255,255,0.28); }
+    .compare-card--us .compare-card__price-label { color: rgba(200,184,154,0.55); }
+    .compare-card__price-num { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+    .compare-card--them .compare-card__price-num { color: rgba(255,255,255,0.4); }
+    .compare-card--us .compare-card__price-num { color: #fff; }
+    .compare-card__price-note { font-size: 0.75rem; margin-top: 4px; }
+    .compare-card--them .compare-card__price-note { color: rgba(255,255,255,0.25); }
+    .compare-card--us .compare-card__price-note { color: rgba(200,184,154,0.5); }
+
+    /* ——— Specs ——— */
+    .specs__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .spec-card { border: 1.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .spec-card--featured { border-color: var(--accent); }
+    .spec-card__header { padding: 24px 28px; background: var(--bg-alt); border-bottom: 1px solid var(--border); }
+    .spec-card--featured .spec-card__header { background: var(--accent); border-color: transparent; }
+    .spec-card__sku { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+    .spec-card--featured .spec-card__sku { color: rgba(255,255,255,0.55); }
+    .spec-card__name { font-size: 1.2rem; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+    .spec-card--featured .spec-card__name { color: #fff; }
+    .spec-card__tagline { font-size: 0.8rem; color: var(--muted); margin-top: 3px; }
+    .spec-card--featured .spec-card__tagline { color: rgba(255,255,255,0.6); }
+    .spec-card__body { padding: 0 28px; }
+    .spec-row { display: flex; justify-content: space-between; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--border); gap: 16px; }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-row__label { font-size: 0.8rem; color: var(--muted); font-weight: 500; flex-shrink: 0; }
+    .spec-row__value { font-size: 0.85rem; color: var(--text); font-weight: 600; text-align: right; }
+    .spec-card__footer { padding: 18px 28px; background: var(--bg-alt); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .spec-card__price { font-size: 1.5rem; font-weight: 700; color: var(--text); letter-spacing: -0.03em; }
+    .spec-card__price-note { font-size: 0.72rem; color: var(--muted); }
+
+    /* ——— Founder ——— */
+    .section--founder { background: var(--bg-alt); }
+    .founder__inner { max-width: 680px; margin: 0 auto; text-align: center; }
+    .founder__quote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+    .founder__quote::before { content: '\201C'; color: var(--gold); }
+    .founder__quote::after { content: '\201D'; color: var(--gold); }
+    .founder__attr { display: flex; align-items: center; gap: 12px; justify-content: center; }
+    .founder__avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold) 0%, #8a6a3a 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.82rem; font-weight: 700;
+      color: var(--navy-deep);
+      flex-shrink: 0;
+    }
+    .founder__name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .founder__role { font-size: 0.78rem; color: var(--muted); }
+
+    /* ——— CTA ——— */
+    .section--cta { background: var(--navy-deep); padding: 96px 0; }
+    .cta__inner { max-width: 520px; margin: 0 auto; text-align: center; }
+    .cta__title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .cta__sub { font-size: 0.94rem; line-height: 1.65; color: rgba(255,255,255,0.45); margin-bottom: 2.5rem; }
+    .cta__form { display: flex; gap: 8px; }
+    .cta__input {
+      flex: 1;
+      padding: 12px 18px;
+      border-radius: 24px;
+      border: 1.5px solid rgba(255,255,255,0.13);
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .cta__input::placeholder { color: rgba(255,255,255,0.28); }
+    .cta__input:focus { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.08); }
+    .cta__submit {
+      flex-shrink: 0;
+      padding: 12px 20px;
+      border-radius: 24px;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-size: 0.88rem;
+      font-weight: 700;
+      font-family: inherit;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .cta__submit:hover { opacity: 0.9; transform: translateY(-1px); }
+    .cta__note { font-size: 0.72rem; color: rgba(255,255,255,0.22); margin-top: 12px; }
+    .cta__success {
+      display: none;
+      background: rgba(52,199,89,0.08);
+      border: 1px solid rgba(52,199,89,0.18);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      font-size: 0.88rem;
+      color: var(--green);
+    }
+
+    .timeline {
+      display: flex;
+      justify-content: center;
+      margin-top: 52px;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 9px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .timeline__step { flex: 1; max-width: 110px; display: flex; flex-direction: column; align-items: center; }
+    .timeline__dot {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      border: 2px solid rgba(255,255,255,0.12);
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .timeline__dot--done { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 10px rgba(200,184,154,0.35); }
+    .timeline__label { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.28); text-align: center; line-height: 1.4; }
+    .timeline__label--done { color: var(--gold); }
+
+    /* ——— Footer ——— */
+    .footer { background: #030810; padding: 52px 24px 32px; }
+    .footer__inner { max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 48px; flex-wrap: wrap; }
+    .footer__brand { max-width: 260px; }
+    .footer__logo { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; }
+    .footer__mark { width: 22px; height: 22px; color: var(--gold); }
+    .footer__logo-name { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.6); }
+    .footer__desc { font-size: 0.78rem; line-height: 1.65; color: rgba(255,255,255,0.25); }
+    .footer__col-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.18); margin-bottom: 14px; }
+    .footer__links { display: flex; flex-direction: column; gap: 9px; }
+    .footer__link { font-size: 0.8rem; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
+    .footer__link:hover { color: rgba(255,255,255,0.65); }
+    .footer__bottom { max-width: var(--max-w); margin: 36px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .footer__copy { font-size: 0.72rem; color: rgba(255,255,255,0.18); }
+    .footer__legal { display: flex; gap: 18px; }
+    .footer__legal a { font-size: 0.72rem; color: rgba(255,255,255,0.18); text-decoration: none; }
+
+    /* ——— Responsive ——— */
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .problem__grid, .features__grid, .compare__grid, .specs__grid { grid-template-columns: 1fr; gap: 24px; }
+      .hero__stats { gap: 24px; }
+      .hero__stat-num { font-size: 1.5rem; }
+      .cta__form { flex-direction: column; }
+      .footer__inner { flex-direction: column; gap: 32px; }
+      .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .timeline::before { width: 80%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <a href="#" class="nav__brand">
+    <svg class="nav__mark" viewBox="0 0 26 26" fill="none">
+      <path d="M13 2.5 A10.5 10.5 0 1 1 4.5 18.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="13,2 10,7.5 16,7.5" fill="currentColor"/>
+    </svg>
+    <span class="nav__name">Oroboro <span>Watermaker</span></span>
+  </a>
+  <a href="#register" class="nav__cta">Register interest</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <svg class="hero__waves" viewBox="0 0 1440 220" preserveAspectRatio="none">
+    <path d="M0,110 C360,170 720,50 1080,110 C1260,140 1380,85 1440,110 L1440,220 L0,220 Z" fill="rgba(200,184,154,0.35)"/>
+    <path d="M0,150 C240,110 480,170 720,140 C960,110 1200,160 1440,130 L1440,220 L0,220 Z" fill="rgba(200,184,154,0.15)"/>
+  </svg>
+
+  <div class="hero__content">
+    <div class="hero__badge">
+      <span class="hero__badge-dot"></span>
+      <span class="hero__badge-text">Now in development · Mediterranean · 2025</span>
+    </div>
+
+    <h1>Fresh water from the sea.<br><em>Without the OEM premium.</em></h1>
+
+    <p class="hero__sub">Industrial-grade marine RO watermaker built from direct-sourced European components. Italian AR pump. FilmTec membrane. SS316L throughout. Serviceable anywhere in the world.</p>
+
+    <div class="hero__actions">
+      <a href="#register" class="btn btn--primary">Register interest →</a>
+      <a href="#how" class="btn btn--outline">See how it works</a>
+    </div>
+
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <span class="hero__stat-num">From €2,990</span>
+        <span class="hero__stat-label">Estimated price</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-num">70 L/h</span>
+        <span class="hero__stat-label">Peak output</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-num">~50%</span>
+        <span class="hero__stat-label">Below OEM brands</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-num">Boats 30ft+</span>
+        <span class="hero__stat-label">Two models available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee strip -->
+<div class="strip" aria-hidden="true">
+  <div class="strip__track">
+    <span class="strip__item">Italian AR Pump</span>
+    <span class="strip__item">FilmTec SW30 Membrane</span>
+    <span class="strip__item">SS316L Components</span>
+    <span class="strip__item">VFD Adjustable Speed</span>
+    <span class="strip__item">European 50Hz Compatible</span>
+    <span class="strip__item">No Proprietary Parts</span>
+    <span class="strip__item">Serviceable Anywhere</span>
+    <span class="strip__item">Made in Athens</span>
+    <span class="strip__item">Italian AR Pump</span>
+    <span class="strip__item">FilmTec SW30 Membrane</span>
+    <span class="strip__item">SS316L Components</span>
+    <span class="strip__item">VFD Adjustable Speed</span>
+    <span class="strip__item">European 50Hz Compatible</span>
+    <span class="strip__item">No Proprietary Parts</span>
+    <span class="strip__item">Serviceable Anywhere</span>
+    <span class="strip__item">Made in Athens</span>
+  </div>
+</div>
+
+<!-- Problem -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="problem__grid">
+      <div>
+        <span class="eyebrow eyebrow--blue">The problem</span>
+        <h2 class="problem__heading">OEM watermakers were not designed for <em>European sailors.</em></h2>
+        <div class="problem__body">
+          <p>Every major US-made watermaker — SeaWater Pro, SK Watermaker — runs at 60Hz. Europe runs at 50Hz. Hook one up to your inverter and you lose 16% of your output immediately, with no fix available from the manufacturer.</p>
+          <p>Then there is the price. Watermakers cost €3,200–8,000 from a brand. The components — the Italian pump, the FilmTec membrane, the SS316L fittings — cost €1,200–2,000 sourced direct. You are paying two to four thousand euros for the logo.</p>
+          <p>And when something breaks in Corfu or Split? Proprietary parts, shipped from the US, at brand prices, in three to six weeks. If they are even still manufactured.</p>
+        </div>
+      </div>
+
+      <div class="callouts">
+        <div class="callout callout--bad">
+          <div class="callout__title">The 50Hz penalty</div>
+          <div class="callout__body">SeaWater Pro and SK EZ-500 are engineered for US 60Hz motors. On a European inverter, your watermaker runs 16% slow — no workaround, no setting, no fix. A €3,500 unit producing 63 L/h instead of 75 L/h for no reason.</div>
+        </div>
+        <div class="callout callout--bad">
+          <div class="callout__title">Proprietary parts trap</div>
+          <div class="callout__body">Branded watermakers use proprietary manifolds, housing end caps, and bypass valves. When the pressure switch fails mid-passage, you will not find it at a chandler in Bodrum or Lagos.</div>
+        </div>
+        <div class="callout callout--good">
+          <div class="callout__title">Oroboro is built differently</div>
+          <div class="callout__body">A VFD drives the motor at 60Hz from any European inverter. Ham-Let valves, Parker fittings, FilmTec membranes — standard industrial parts stocked by distributors in every Mediterranean country.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section section--features" id="features">
+  <div class="container">
+    <div class="section__header">
+      <span class="eyebrow">Why Oroboro</span>
+      <h2 class="section__title">Built for the Mediterranean. Engineered for independence.</h2>
+      <p class="section__sub">Every decision — pump, motor, valve, membrane — was made for the sailor who needs reliable fresh water, affordable parts, and no dependence on a US brand support line.</p>
+    </div>
+
+    <div class="features__grid">
+      <div class="feature-card">
+        <div class="feature-card__icon icon--blue">⚡</div>
+        <div class="feature-card__tag">Key differentiator</div>
+        <h3 class="feature-card__title">Full output on European 50Hz</h3>
+        <p class="feature-card__body">The VFD (Variable Frequency Drive) takes your inverter's 50Hz output and drives the motor at 60Hz. The pump runs at its design speed. You get the full 70 L/h the system is capable of — not the 60 L/h a fixed-speed US unit produces on European power.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon icon--gold">🔩</div>
+        <div class="feature-card__tag feature-card__tag--gold">Italian engineering</div>
+        <h3 class="feature-card__title">AR Italian pump — zero oil changes</h3>
+        <p class="feature-card__body">The Annovi Reverberi JRA2.2 is a ceramic triplex plunger pump from Modena, Italy. Water-lubricated ceramic plungers — no oil to change, no crankcase to service. The same pump family used in professional RO systems worldwide. Built to outlast the boat.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon icon--green">☀️</div>
+        <div class="feature-card__tag">Solar mode</div>
+        <h3 class="feature-card__title">Make water on solar alone</h3>
+        <p class="feature-card__body">Dial the VFD down to 30–35Hz. The motor draws ~55–65A at 12V. A 400W solar array provides 28–30A. Net battery draw: 25–36A. On a Mediterranean summer day with 5+ hours of sun, you produce 150–175 litres while barely touching your battery bank.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon icon--purple">🌍</div>
+        <div class="feature-card__tag">Global serviceability</div>
+        <h3 class="feature-card__title">Standard parts, anywhere in the world</h3>
+        <p class="feature-card__body">Ham-Let high-pressure valve. Parker SS316L fittings. Dow FilmTec membrane. Schneider Electric VFD. These are industrial catalogue parts — stocked by distributors in Athens, Palma, Marseille, and Lagos. No single-source US supplier dependency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Compare -->
+<section class="section section--compare">
+  <div class="container">
+    <div class="section__header">
+      <span class="eyebrow">Side by side</span>
+      <h2 class="section__title">Them vs. Oroboro</h2>
+      <p class="section__sub">SeaWater Pro and SK EZ-500 are solid products — for US sailors on 60Hz power. For the Mediterranean, they are the wrong tool at the wrong price.</p>
+    </div>
+
+    <div class="compare__grid">
+      <div class="compare-card compare-card--them">
+        <div class="compare-card__label">
+          <span class="compare-card__label-dot"></span>
+          OEM Brands
+        </div>
+        <div class="compare-card__name">SeaWater Pro · SK EZ-500</div>
+        <ul class="compare-list">
+          <li><span class="cli">✕</span><span>16% output loss on European 50Hz — no fix available</span></li>
+          <li><span class="cli">✕</span><span>Fixed motor speed — no solar mode, no variable output</span></li>
+          <li><span class="cli">✕</span><span>Proprietary parts — US-only sourcing when something fails</span></li>
+          <li><span class="cli">✕</span><span>SK: oil-lubricated GP pump — oil changes at sea required</span></li>
+          <li><span class="cli">✕</span><span>SK: currently sold out, availability unknown</span></li>
+        </ul>
+        <div class="compare-card__price">
+          <div class="compare-card__price-label">Starting price</div>
+          <div class="compare-card__price-num">€3,200–4,100</div>
+          <div class="compare-card__price-note">For products not designed for European grid</div>
+        </div>
+      </div>
+
+      <div class="compare-card compare-card--us">
+        <div class="compare-card__label">
+          <span class="compare-card__label-dot"></span>
+          Oroboro Watermaker
+        </div>
+        <div class="compare-card__name">ORB-2540 · ORB-2521</div>
+        <ul class="compare-list">
+          <li><span class="cli">✓</span><span>VFD corrects to 60Hz — full output from any European inverter</span></li>
+          <li><span class="cli">✓</span><span>Variable speed 30–60Hz — solar-only watermaking mode</span></li>
+          <li><span class="cli">✓</span><span>Ham-Let, Parker, FilmTec — industrial catalogue parts worldwide</span></li>
+          <li><span class="cli">✓</span><span>AR ceramic plunger pump — zero oil, zero maintenance schedule</span></li>
+          <li><span class="cli">✓</span><span>Assembled and supported in Athens, Greece</span></li>
+        </ul>
+        <div class="compare-card__price">
+          <div class="compare-card__price-label">Starting price</div>
+          <div class="compare-card__price-num">From €2,990</div>
+          <div class="compare-card__price-note">Estimated · subject to prototype validation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Specs -->
+<section class="section" id="specs">
+  <div class="container">
+    <div class="section__header">
+      <span class="eyebrow eyebrow--blue">Two models</span>
+      <h2 class="section__title">The right size for your boat</h2>
+      <p class="section__sub">Same pump, same motor, same build quality. Choose the membrane size that matches your water consumption and hull length.</p>
+    </div>
+
+    <div class="specs__grid">
+      <div class="spec-card spec-card--featured">
+        <div class="spec-card__header">
+          <div class="spec-card__sku">ORB-2540</div>
+          <div class="spec-card__name">Oroboro Standard</div>
+          <div class="spec-card__tagline">For sailing boats 38ft and above</div>
+        </div>
+        <div class="spec-card__body">
+          <div class="spec-row">
+            <span class="spec-row__label">Membrane</span>
+            <span class="spec-row__value">Dow FilmTec SW30-2540 (40")</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Peak output</span>
+            <span class="spec-row__value">65–70 L/h at 70 bar</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">HP pump</span>
+            <span class="spec-row__value">AR JRA2.2 ceramic plungers</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Motor / drive</span>
+            <span class="spec-row__value">1.1 kW 3-phase + Schneider VFD</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Speed range</span>
+            <span class="spec-row__value">30–60 Hz — VFD adjustable</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Power draw</span>
+            <span class="spec-row__value">55–110 A at 12V</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Efficiency</span>
+            <span class="spec-row__value">~20 Wh/L</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">HP valve</span>
+            <span class="spec-row__value">Ham-Let SS316L, 344 bar</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Pre-filtration</span>
+            <span class="spec-row__value">Two-stage — 20µm + 5µm</span>
+          </div>
+        </div>
+        <div class="spec-card__footer">
+          <div>
+            <div class="spec-card__price">~€3,500–3,900</div>
+            <div class="spec-card__price-note">Estimated · prototype in progress</div>
+          </div>
+          <a href="#register" class="btn btn--gold">Notify me</a>
+        </div>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-card__header">
+          <div class="spec-card__sku">ORB-2521</div>
+          <div class="spec-card__name">Oroboro Compact</div>
+          <div class="spec-card__tagline">For sailing boats 30–37ft</div>
+        </div>
+        <div class="spec-card__body">
+          <div class="spec-row">
+            <span class="spec-row__label">Membrane</span>
+            <span class="spec-row__value">Dow FilmTec SW30-2521 (20")</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Peak output</span>
+            <span class="spec-row__value">25–35 L/h at 70 bar</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">HP pump</span>
+            <span class="spec-row__value">AR JRA2.2 ceramic plungers</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Motor / drive</span>
+            <span class="spec-row__value">1.1 kW 3-phase + Schneider VFD</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Speed range</span>
+            <span class="spec-row__value">30–60 Hz — VFD adjustable</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Power draw</span>
+            <span class="spec-row__value">55–110 A at 12V</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Efficiency</span>
+            <span class="spec-row__value">~40 Wh/L</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">HP valve</span>
+            <span class="spec-row__value">Ham-Let SS316L, 344 bar</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-row__label">Pre-filtration</span>
+            <span class="spec-row__value">Two-stage — 20µm + 5µm</span>
+          </div>
+        </div>
+        <div class="spec-card__footer">
+          <div>
+            <div class="spec-card__price">~€2,990</div>
+            <div class="spec-card__price-note">Estimated · prototype in progress</div>
+          </div>
+          <a href="#register" class="btn btn--primary">Notify me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Founder -->
+<section class="section section--founder">
+  <div class="container">
+    <div class="founder__inner">
+      <span class="eyebrow">The story</span>
+      <p class="founder__quote">I've been sailing the Mediterranean for years and I couldn't justify spending €6,000 on a watermaker when I knew the components cost a fraction of that. The pump is Italian. The membrane is Dow. The fittings are Parker. None of it is magic — so I decided to build one the right way, for Europe, from parts you can actually replace anywhere in the world.</p>
+      <div class="founder__attr">
+        <div class="founder__avatar">FP</div>
+        <div>
+          <div class="founder__name">Francesco Pugliano</div>
+          <div class="founder__role">Founder, Oroboro Watermaker LLC · Athens, Greece</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section--cta" id="register">
+  <div class="container">
+    <div class="cta__inner">
+      <span class="eyebrow">Early interest</span>
+      <h2 class="cta__title">Be first to know when it's available.</h2>
+      <p class="cta__sub">Prototype testing is underway. First units are expected late 2025. Leave your email and we will send you one message when the Oroboro is ready to order — nothing else.</p>
+
+      <!-- Replace YOUR_FORMSPREE_ID with your actual Formspree form ID -->
+      <form class="cta__form" id="notifyForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <input type="email" name="email" class="cta__input" placeholder="your@email.com" required>
+        <input type="hidden" name="source" value="oroboro-watermaker-teaser">
+        <button type="submit" class="cta__submit">Notify me →</button>
+      </form>
+      <div class="cta__success" id="formSuccess">
+        You're on the list. We'll reach out when the Oroboro is ready to order.
+      </div>
+      <p class="cta__note">No spam. One email, when it's available.</p>
+
+      <div class="timeline">
+        <div class="timeline__step">
+          <div class="timeline__dot timeline__dot--done"></div>
+          <div class="timeline__label timeline__label--done">Design<br>complete</div>
+        </div>
+        <div class="timeline__step">
+          <div class="timeline__dot timeline__dot--done"></div>
+          <div class="timeline__label timeline__label--done">Prototype<br>testing</div>
+        </div>
+        <div class="timeline__step">
+          <div class="timeline__dot"></div>
+          <div class="timeline__label">First units<br>built</div>
+        </div>
+        <div class="timeline__step">
+          <div class="timeline__dot"></div>
+          <div class="timeline__label">Available<br>to order</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <svg class="footer__mark" viewBox="0 0 22 22" fill="none">
+          <path d="M11 2 A9 9 0 1 1 3.5 15.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <polygon points="11,1.5 8.5,6 13.5,6" fill="currentColor"/>
+        </svg>
+        <span class="footer__logo-name">Oroboro Watermaker</span>
+      </div>
+      <p class="footer__desc">Oroboro Watermaker LLC is a Wyoming company building industrial-grade marine RO watermakers for the Mediterranean cruising market.</p>
+    </div>
+
+    <div>
+      <div class="footer__col-title">Navigation</div>
+      <div class="footer__links">
+        <a href="#how" class="footer__link">How it works</a>
+        <a href="#features" class="footer__link">Why Oroboro</a>
+        <a href="#specs" class="footer__link">Specifications</a>
+        <a href="#register" class="footer__link">Register interest</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer__col-title">Oroboro</div>
+      <div class="footer__links">
+        <a href="https://www.sailingoroboro.com" class="footer__link" target="_blank" rel="noopener">SailingOroboro.com</a>
+        <a href="mailto:hello@oroboro.com" class="footer__link">hello@oroboro.com</a>
+        <a href="#" class="footer__link">Wyoming, USA · Athens, Greece</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <span class="footer__copy">© 2025 Oroboro Watermaker LLC. All rights reserved.</span>
+    <div class="footer__legal">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('notifyForm');
+  const success = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        alert('Something went wrong. Please email us at hello@oroboro.com');
+      }
+    } catch {
+      alert('Something went wrong. Please email us at hello@oroboro.com');
+    }
+  });
+</script>
+
+</body>
+</html>

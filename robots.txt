@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://watermaker.sailingoroboro.com/sitemap.xml
