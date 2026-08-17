@@ -626,6 +626,36 @@
       .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
       .timeline::before { width: 80%; }
     }
+
+    /* ——— Use case tabs ——— */
+    .usecase__tabs { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
+    .usecase__tab { flex: 1; min-width: 140px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 16px 14px; cursor: pointer; text-align: left; transition: background 0.18s, border-color 0.18s; color: rgba(255,255,255,0.6); }
+    .usecase__tab:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
+    .usecase__tab.active { background: rgba(200,184,154,0.13); border-color: var(--gold); color: #fff; }
+    .usecase__tab-icon { font-size: 1.3rem; display: block; margin-bottom: 6px; }
+    .usecase__tab-title { font-size: 0.88rem; font-weight: 700; display: block; line-height: 1.2; }
+    .usecase__tab-sub { font-size: 0.72rem; color: rgba(255,255,255,0.35); display: block; margin-top: 3px; }
+    .usecase__tab.active .usecase__tab-sub { color: rgba(200,184,154,0.65); }
+    .usecase__panel { display: none; }
+    .usecase__panel.active { display: block; }
+    .usecase__loads { margin-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px; }
+    .usecase__loads-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 12px; }
+    .usecase__load { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.8rem; }
+    .usecase__load:last-child { border-bottom: none; }
+    .usecase__load-label { color: rgba(255,255,255,0.45); }
+    .usecase__load-val { color: rgba(255,255,255,0.8); font-variant-numeric: tabular-nums; }
+    .usecase__load--total .usecase__load-label,
+    .usecase__load--total .usecase__load-val { font-weight: 700; color: #fff; padding-top: 4px; }
+    .usecase__load--solar .usecase__load-label,
+    .usecase__load--solar .usecase__load-val { color: #4ade80; }
+    .usecase__load--deficit .usecase__load-label,
+    .usecase__load--deficit .usecase__load-val { color: #f87171; }
+    .usecase__load--surplus .usecase__load-label,
+    .usecase__load--surplus .usecase__load-val { color: #4ade80; }
+    .usecase__verdict { background: rgba(200,184,154,0.09); border: 1px solid rgba(200,184,154,0.2); border-radius: 10px; padding: 18px 20px; margin-top: 20px; }
+    .usecase__verdict-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; }
+    .usecase__verdict-sku { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .usecase__verdict-text { font-size: 0.82rem; line-height: 1.6; color: rgba(255,255,255,0.65); }
   </style>
 </head>
 <body>
@@ -847,34 +877,212 @@
     <div class="section__header">
       <span class="eyebrow">Real world</span>
       <h2 class="section__title">Will it work on your boat?</h2>
-      <p class="section__sub">Here is a realistic Med cruiser — 360 Ah lead acid, 400W flexible solar, a fridge running all day. The honest power balance, not the rosy one.</p>
+      <p class="section__sub">Four real Mediterranean setups. Honest power math — fridge included, realistic solar output, no wishful thinking. Pick the one closest to yours.</p>
     </div>
-    <div class="usecase__card">
-      <div class="usecase__boat">
-        <div class="usecase__boat-title">The boat</div>
-        <div class="usecase__specs">
-          <div class="usecase__spec"><span class="usecase__spec-label">Battery bank</span><span class="usecase__spec-val">360 Ah lead acid @ 12V — 180 Ah usable (never discharge below 50%)</span></div>
-          <div class="usecase__spec"><span class="usecase__spec-label">Inverter</span><span class="usecase__spec-val">3,500W pure sine wave — already on board</span></div>
-          <div class="usecase__spec"><span class="usecase__spec-label">Solar</span><span class="usecase__spec-val">400W flexible panels</span></div>
+
+    <!-- Boat selector tabs -->
+    <div class="usecase__tabs">
+      <button class="usecase__tab" data-tab="0">
+        <span class="usecase__tab-icon">&#9975;</span>
+        <span class="usecase__tab-title">Weekend couple</span>
+        <span class="usecase__tab-sub">35–37ft &middot; 200 Ah</span>
+      </button>
+      <button class="usecase__tab active" data-tab="1">
+        <span class="usecase__tab-icon">&#9875;</span>
+        <span class="usecase__tab-title">Med family</span>
+        <span class="usecase__tab-sub">40–45ft &middot; 400 Ah</span>
+      </button>
+      <button class="usecase__tab" data-tab="2">
+        <span class="usecase__tab-icon">&#127758;</span>
+        <span class="usecase__tab-title">Liveaboard</span>
+        <span class="usecase__tab-sub">45ft+ &middot; 600 Ah</span>
+      </button>
+      <button class="usecase__tab" data-tab="3">
+        <span class="usecase__tab-icon">&#9728;</span>
+        <span class="usecase__tab-title">Catamaran</span>
+        <span class="usecase__tab-sub">42ft+ &middot; High solar</span>
+      </button>
+    </div>
+
+    <!-- Panel 0: Weekend couple -->
+    <div class="usecase__panel" data-panel="0">
+      <div class="usecase__card">
+        <div class="usecase__boat">
+          <div class="usecase__boat-title">The boat</div>
+          <div class="usecase__specs">
+            <div class="usecase__spec"><span class="usecase__spec-label">Boat</span><span class="usecase__spec-val">35–37ft production monohull, 2005–2012</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Battery</span><span class="usecase__spec-val">200 Ah AGM @ 12V &mdash; 100 Ah usable</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Solar</span><span class="usecase__spec-val">160W flexible &rarr; ~75W realistic output</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Inverter</span><span class="usecase__spec-val">2,000W pure sine wave (minimum required)</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Crew</span><span class="usecase__spec-val">2 adults, 3–4 weeks summer, marina every 2–3 nights</span></div>
+          </div>
+          <div class="usecase__loads">
+            <div class="usecase__loads-title">Daily power budget</div>
+            <div class="usecase__load"><span class="usecase__load-label">Compressor fridge (40 L)</span><span class="usecase__load-val">~250 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Chartplotter + AIS + VHF</span><span class="usecase__load-val">~120 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">LED lights + anchor light</span><span class="usecase__load-val">~60 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Phones + tablet</span><span class="usecase__load-val">~60 Wh</span></div>
+            <div class="usecase__load usecase__load--total"><span class="usecase__load-label">Total daily</span><span class="usecase__load-val">~490 Wh</span></div>
+            <div class="usecase__load usecase__load--solar"><span class="usecase__load-label">Solar input (realistic)</span><span class="usecase__load-val">+375 Wh</span></div>
+            <div class="usecase__load usecase__load--deficit"><span class="usecase__load-label">Daily deficit</span><span class="usecase__load-val">&minus;115 Wh</span></div>
+          </div>
+          <div class="usecase__verdict">
+            <div class="usecase__verdict-label">Recommendation</div>
+            <div class="usecase__verdict-sku">ORB-2521 at 30 Hz</div>
+            <div class="usecase__verdict-text">Compact vessel fits tight lockers. 45 min run &rarr; ~26 L. Net battery draw: ~37 Ah. Run while motoring or right after engine stop.</div>
+          </div>
+        </div>
+        <div class="usecase__qa">
+          <div class="usecase__q">Why the compact ORB-2521 and not the full ORB-2540?</div>
+          <div class="usecase__a">Space, not output. The ORB-2521 uses a 21-inch pressure vessel — roughly half the length of the full model. On a 35–37ft boat the locker space is tight and every centimetre counts. Output is lower (~26 L per 45-minute run at 30Hz), but for two people being water-smart that is more than enough.</div>
+
+          <div class="usecase__q">Does the bank survive the run?</div>
+          <div class="usecase__a">With 100 Ah usable, one run draws ~37 Ah net (panel charges during the run). That leaves 63 Ah in reserve — well above the 50% limit if the bank was reasonably full. On a 35–37ft boat you motor more often than bigger boats anyway. Run the watermaker while the engine is running and it costs you nothing from the bank.</div>
+
+          <div class="usecase__q">What about the inverter?</div>
+          <div class="usecase__a">The VFD needs a pure sine wave inverter rated 2,000W minimum continuous. If you have a 1,000W or 1,500W unit — or a modified sine wave unit — replace it first. This is not optional. A 2,000W pure sine wave inverter costs €150–250 and is a worthwhile upgrade regardless of the watermaker.</div>
+
+          <div class="usecase__q">Is 26 litres enough for two people?</div>
+          <div class="usecase__a">13 litres per person per day is plenty for drinking, cooking, and quick rinses — especially on a boat where you are in the sea all day. Run it every other day and you have a comfortable buffer. At marinas, top up tanks for free and don&apos;t run it at all.</div>
         </div>
       </div>
-      <div class="usecase__qa">
-        <div class="usecase__q">What does one watermaker run actually cost in power?</div>
-        <div class="usecase__a">At 30Hz the system draws ~700W (58A at 12V) through the inverter. To produce ~50 litres — a good day's supply for two people — he runs it for about 1.5 hours. Total: ~1,050 Wh, or roughly 87 Ah at 12V. With 180 Ah usable from his lead acid bank, that is roughly half the available reserve in one session. Significant, but manageable with timing and occasional engine charging.</div>
+    </div>
 
-        <div class="usecase__q">Can 400W of flexible solar cover it — if he also has a fridge?</div>
-        <div class="usecase__a">Not entirely. Flexible panels mounted flat in Med heat realistically deliver around 180–200W — about half their nominal rating. Over a good 5-hour charging window that is ~900–1,000 Wh per day from solar. His fridge alone consumes around 400 Wh/day. Add the watermaker, navigation electronics, and phone charging, and the daily total reliably exceeds what solar alone produces. Plan for one hour of engine charging every 2–3 days. It is not free water — it is very cheap water.</div>
+    <!-- Panel 1: Med family -->
+    <div class="usecase__panel active" data-panel="1">
+      <div class="usecase__card">
+        <div class="usecase__boat">
+          <div class="usecase__boat-title">The boat</div>
+          <div class="usecase__specs">
+            <div class="usecase__spec"><span class="usecase__spec-label">Boat</span><span class="usecase__spec-val">40–45ft production monohull, 2010–2018</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Battery</span><span class="usecase__spec-val">400 Ah AGM @ 12V &mdash; 200 Ah usable</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Solar</span><span class="usecase__spec-val">300W rigid on arch &rarr; ~210W realistic output</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Inverter</span><span class="usecase__spec-val">2,500W pure sine wave</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Crew</span><span class="usecase__spec-val">2 adults + kids, 6–8 weeks summer, marina every 4–5 nights</span></div>
+          </div>
+          <div class="usecase__loads">
+            <div class="usecase__loads-title">Daily power budget</div>
+            <div class="usecase__load"><span class="usecase__load-label">Fridge + small freezer</span><span class="usecase__load-val">~500 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Autopilot</span><span class="usecase__load-val">~200 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Nav suite (chartplotter, AIS, VHF)</span><span class="usecase__load-val">~250 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Electric windlass</span><span class="usecase__load-val">~50 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Lights + devices (4 people)</span><span class="usecase__load-val">~250 Wh</span></div>
+            <div class="usecase__load usecase__load--total"><span class="usecase__load-label">Total daily</span><span class="usecase__load-val">~1,250 Wh</span></div>
+            <div class="usecase__load usecase__load--solar"><span class="usecase__load-label">Solar input (realistic)</span><span class="usecase__load-val">+1,050 Wh</span></div>
+            <div class="usecase__load usecase__load--deficit"><span class="usecase__load-label">Daily deficit</span><span class="usecase__load-val">&minus;200 Wh</span></div>
+          </div>
+          <div class="usecase__verdict">
+            <div class="usecase__verdict-label">Recommendation</div>
+            <div class="usecase__verdict-sku">ORB-2540 at 30 Hz</div>
+            <div class="usecase__verdict-text">1.5h midday run &rarr; ~52 L. Net battery draw: ~58 Ah, leaving 142 Ah in reserve. Engine top-up every 2–3 anchor nights. Very manageable.</div>
+          </div>
+        </div>
+        <div class="usecase__qa">
+          <div class="usecase__q">What does one watermaker run actually cost?</div>
+          <div class="usecase__a">At 30Hz the system draws ~700W through the inverter. Running 1.5 hours to produce ~52 litres costs ~1,050 Wh total. With 210W of solar charging simultaneously (~315 Wh recovered during the run), the net battery draw is ~735 Wh — about 61 Ah at 12V. That leaves 139 Ah in reserve. Comfortable, well above the 50% DoD limit.</div>
 
-        <div class="usecase__q">When is the best moment to run it?</div>
-        <div class="usecase__a">Midday, when solar output peaks. Pre-cool the fridge for an hour first, then switch it off for the duration of the watermaker run to cut the concurrent load. With 180–200W coming from panels, net battery draw drops from 700W to around 500W. After the run, afternoon solar recharges the bank while the fridge catches up. Timing and sequencing matter more than total panel wattage.</div>
+          <div class="usecase__q">Can 300W rigid solar cover it — with the fridge running all day?</div>
+          <div class="usecase__a">Not entirely. The daily budget without the watermaker is ~1,250 Wh. Solar covers ~1,050 Wh, leaving a ~200 Wh deficit per day. Add the watermaker run and that deficit grows. In practice: one engine charging session every 2–3 anchor nights (you are probably motoring between islands anyway) balances the bank. It is very cheap water — not free water.</div>
 
-        <div class="usecase__q">What inverter does he need?</div>
-        <div class="usecase__a">Pure sine wave, 2,000W minimum continuous output. His 3,500W unit is more than adequate. Modified sine wave inverters will damage the VFD — do not use them. The VFD's built-in soft-start keeps startup current smooth, so he will not see the voltage spikes a fixed-speed motor would produce.</div>
+          <div class="usecase__q">What is the trick with the fridge?</div>
+          <div class="usecase__a">Pre-cool the fridge for an hour before the run, then switch the compressor off for the 90-minute watermaking window. The thermal mass of a well-insulated fridge holds temperature easily for that long. Net battery draw drops by 50–80W, the inverter is under less stress, and you recover 75–120 Wh over the run. It is the single most effective power management move on a hot Med day.</div>
 
-        <div class="usecase__q">What if he has lithium?</div>
-        <div class="usecase__a">Much easier. A 200 Ah LiFePO4 bank holds the same usable energy as his 360 Ah lead acid — but every last amp is available without damage. Solar covers a far larger share of the daily draw, and the inverter stays stable all the way to the bottom. On a good Med summer day with lithium, the watermaker genuinely runs on sun alone.</div>
+          <div class="usecase__q">What if they switch to rigid solar?</div>
+          <div class="usecase__a">Rigid panels at optimal angle run at 65–75% of nominal vs. ~50% for flexible flat-mounted. Upgrading to 400W rigid (same cost as 600W flexible) yields ~280W realistic — enough to nearly offset the watermaker run. Add a wind generator and the bank could stay positive without any engine charging on good days.</div>
+        </div>
       </div>
     </div>
+
+    <!-- Panel 2: Liveaboard -->
+    <div class="usecase__panel" data-panel="2">
+      <div class="usecase__card">
+        <div class="usecase__boat">
+          <div class="usecase__boat-title">The boat</div>
+          <div class="usecase__specs">
+            <div class="usecase__spec"><span class="usecase__spec-label">Boat</span><span class="usecase__spec-val">45–52ft bluewater cruiser, 2000–2015</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Battery</span><span class="usecase__spec-val">600 Ah AGM @ 12V &mdash; 300 Ah usable</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Solar</span><span class="usecase__spec-val">400W rigid on arch + 50W wind gen &rarr; ~330W average</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Inverter</span><span class="usecase__spec-val">3,000W Victron MultiPlus</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Crew</span><span class="usecase__spec-val">2 adults, continuous cruising, Aegean + eastern Med</span></div>
+          </div>
+          <div class="usecase__loads">
+            <div class="usecase__loads-title">Daily power budget</div>
+            <div class="usecase__load"><span class="usecase__load-label">Fridge + standalone freezer</span><span class="usecase__load-val">~700 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Autopilot (continuous)</span><span class="usecase__load-val">~300 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Full nav suite + SSB</span><span class="usecase__load-val">~400 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Laptop + devices</span><span class="usecase__load-val">~250 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">LED lights + fans</span><span class="usecase__load-val">~150 Wh</span></div>
+            <div class="usecase__load usecase__load--total"><span class="usecase__load-label">Total daily</span><span class="usecase__load-val">~1,800 Wh</span></div>
+            <div class="usecase__load usecase__load--solar"><span class="usecase__load-label">Solar + wind (realistic)</span><span class="usecase__load-val">+1,450 Wh</span></div>
+            <div class="usecase__load usecase__load--deficit"><span class="usecase__load-label">Daily deficit</span><span class="usecase__load-val">&minus;350 Wh</span></div>
+          </div>
+          <div class="usecase__verdict">
+            <div class="usecase__verdict-label">Recommendation</div>
+            <div class="usecase__verdict-sku">ORB-2540 at 30–60 Hz</div>
+            <div class="usecase__verdict-text">Large bank absorbs the run easily. 300 Ah usable means the watermaker barely registers. Dial speed to match the day&apos;s solar. Engine charges everything on passage days.</div>
+          </div>
+        </div>
+        <div class="usecase__qa">
+          <div class="usecase__q">Do they ever need to run the engine just for the watermaker?</div>
+          <div class="usecase__a">Almost never. They are already motoring between anchorages every few days — the engine charges the bank, the alternator runs at full output, and they can run the watermaker simultaneously at no additional cost. On anchor days with good sun, the 300 Ah usable bank handles the ~70 Ah watermaker draw and still has 230 Ah in reserve by the time they go to sleep. Engine charging happens once a week at most.</div>
+
+          <div class="usecase__q">Can they dial the speed up on sunny days?</div>
+          <div class="usecase__a">Yes — and this is where variable speed pays off. At 45Hz the system draws ~900W and produces ~50 L/h. On a good solar day their panels put back ~280W, leaving ~620W net draw. Running for 1.5 hours produces 75 litres — a full day&apos;s supply for two people, done before lunch. On cloudy days they drop to 30Hz, run longer, and draw less per litre.</div>
+
+          <div class="usecase__q">What about hot water?</div>
+          <div class="usecase__a">Their calorifier (engine heat exchanger) gives them free hot water on passage days. At anchor, a 230V element in the calorifier — powered via the Victron MultiPlus on a sunny afternoon — heats 20 litres in about 30 minutes at 800W. 400 Wh from solar surplus: hot shower, zero fuel. This is the liveaboard advantage.</div>
+
+          <div class="usecase__q">What changes with lithium?</div>
+          <div class="usecase__a">A 300 Ah LiFePO4 bank (same weight as 150 Ah AGM) gives them the same usable energy as their 600 Ah AGM — but 100% of it is available. The watermaker run uses 22% of the bank at 30Hz instead of 47%. Solar fills it back up comfortably on most Med days. Some liveaboards report running the watermaker every day on sun alone after the lithium upgrade.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 3: Catamaran -->
+    <div class="usecase__panel" data-panel="3">
+      <div class="usecase__card">
+        <div class="usecase__boat">
+          <div class="usecase__boat-title">The boat</div>
+          <div class="usecase__specs">
+            <div class="usecase__spec"><span class="usecase__spec-label">Boat</span><span class="usecase__spec-val">42–48ft catamaran, 2015–2022</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Battery</span><span class="usecase__spec-val">600 Ah AGM @ 12V &mdash; 300 Ah usable</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Solar</span><span class="usecase__spec-val">700W rigid on cat arch &rarr; ~455W realistic output</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Inverter</span><span class="usecase__spec-val">3,000W pure sine wave</span></div>
+            <div class="usecase__spec"><span class="usecase__spec-label">Crew</span><span class="usecase__spec-val">4–6 people, Ionian or Cyclades, extended anchor stays</span></div>
+          </div>
+          <div class="usecase__loads">
+            <div class="usecase__loads-title">Daily power budget</div>
+            <div class="usecase__load"><span class="usecase__load-label">Large fridge + freezer</span><span class="usecase__load-val">~700 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Cabin fans (4–6 cabins)</span><span class="usecase__load-val">~200 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Nav + autopilot</span><span class="usecase__load-val">~250 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Devices (6 people)</span><span class="usecase__load-val">~200 Wh</span></div>
+            <div class="usecase__load"><span class="usecase__load-label">Lights + windlass</span><span class="usecase__load-val">~230 Wh</span></div>
+            <div class="usecase__load usecase__load--total"><span class="usecase__load-label">Total daily</span><span class="usecase__load-val">~1,580 Wh</span></div>
+            <div class="usecase__load usecase__load--solar"><span class="usecase__load-label">Solar input (realistic)</span><span class="usecase__load-val">+2,275 Wh</span></div>
+            <div class="usecase__load usecase__load--surplus"><span class="usecase__load-label">Daily surplus</span><span class="usecase__load-val">+695 Wh &#9989;</span></div>
+          </div>
+          <div class="usecase__verdict">
+            <div class="usecase__verdict-label">Recommendation</div>
+            <div class="usecase__verdict-sku">ORB-2540 at 60 Hz</div>
+            <div class="usecase__verdict-text">Solar surplus covers day-to-day loads entirely. Run at full speed midday: 1.5h &rarr; ~100 L for 6 people. The catamaran is the one setup where solar-only watermaking is genuinely achievable.</div>
+          </div>
+        </div>
+        <div class="usecase__qa">
+          <div class="usecase__q">Is a catamaran really the only setup where solar covers everything?</div>
+          <div class="usecase__a">Almost. The arch on a 42–48ft cat holds 600–800W of rigid panels with a clean unobstructed sky view — no boom shadow, no sail shadow in the usual positions. At 65% realistic efficiency, 700W nominal yields ~455W. Over a 5-hour Med summer day: ~2,275 Wh. Total daily loads are ~1,580 Wh. That is a 695 Wh surplus — before the watermaker even runs. The watermaker run (1,400 Wh at 60Hz for 1 hour) temporarily dips the bank, but the surplus from the rest of the day fills it back. Engine optional.</div>
+
+          <div class="usecase__q">100 litres for 6 people — how long does it take?</div>
+          <div class="usecase__a">At 60Hz the system produces ~65–70 L/h. Run it for 1.5 hours and you get ~100 litres — about 16 litres per person. More than enough for cooking, drinking, and a proper rinse after snorkelling. Start the run at midday with the bank full from the morning sun, and the afternoon panels refill what the run used by sunset.</div>
+
+          <div class="usecase__q">What about the AC?</div>
+          <div class="usecase__a">The ORB-2540 draws 1,400W at 60Hz. Air conditioning on a cat draws 2,000–3,000W. Running both from the same inverter simultaneously is possible in theory — the inverter handles 3,000W — but you are asking 5,000W+ from the battery bank in one go. Better: run the watermaker at midday with no AC, then run AC in the evening when the bank is full and you are plugged into shore power or the engines are running.</div>
+
+          <div class="usecase__q">Do they still need to run the engines?</div>
+          <div class="usecase__a">Only to move between anchorages. Charging the bank from solar is sufficient for all loads including daily watermaking on sunny Med days. The alternators (2&times; 80A) charge the bank fast when motoring anyway. A 3-hour passage between islands typically tops everything up. Engine charging for battery purposes only: perhaps once every 7–10 days in prolonged bad weather.</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1202,6 +1410,17 @@
 </footer>
 
 <script>
+  // Use case tabs
+  document.querySelectorAll('.usecase__tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var idx = this.dataset.tab;
+      document.querySelectorAll('.usecase__tab').forEach(function(t) { t.classList.remove('active'); });
+      document.querySelectorAll('.usecase__panel').forEach(function(p) { p.classList.remove('active'); });
+      this.classList.add('active');
+      document.querySelector('.usecase__panel[data-panel="' + idx + '"]').classList.add('active');
+    });
+  });
+
   const form = document.getElementById('notifyForm');
   const success = document.getElementById('formSuccess');
 
