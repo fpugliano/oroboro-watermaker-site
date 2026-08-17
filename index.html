@@ -567,6 +567,21 @@
     .whatitis__expand { font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.45); max-width: 640px; margin: 0 auto; }
 
     /* ——— Components ——— */
+    /* ——— Use case ——— */
+    .section--usecase { background: var(--navy); color: #fff; }
+    .section--usecase .section__title { color: #fff; }
+    .section--usecase .section__sub { color: rgba(255,255,255,0.55); }
+    .usecase__card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 40px; display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; }
+    .usecase__boat-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .usecase__specs { display: flex; flex-direction: column; gap: 14px; }
+    .usecase__spec { display: flex; flex-direction: column; gap: 3px; }
+    .usecase__spec-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.06em; }
+    .usecase__spec-val { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.4; }
+    .usecase__qa { display: flex; flex-direction: column; gap: 20px; }
+    .usecase__q { font-size: 0.95rem; font-weight: 700; color: var(--gold); }
+    .usecase__a { font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.7); margin-top: -12px; }
+    @media (max-width: 768px) { .usecase__card { grid-template-columns: 1fr; gap: 32px; padding: 24px; } }
+
     .section--components { background: var(--bg-alt); }
     .components__grid {
       display: grid;
@@ -721,11 +736,11 @@
         </div>
         <div class="callout callout--bad">
           <div class="callout__title">Built for big yachts and deep pockets. Not anymore.</div>
-          <div class="callout__body">Most marine watermakers are engineered for US 60Hz power and carry price tags to match — designed for owners with a yacht manager to handle the paperwork. Run one from a European inverter and you lose 16% of output permanently, with no fix. And when something breaks in Paros or Leros? Proprietary parts, from one supplier, shipped from overseas.</div>
+          <div class="callout__body">Most marine watermakers are designed for owners with a yacht manager and a budget to match. And when something breaks in Paros or Leros? Proprietary parts, from one supplier, shipped from the US — with the exchange rate, the import duties, and the waiting time on top.</div>
         </div>
         <div class="callout callout--good">
           <div class="callout__title">Oroboro is built differently</div>
-          <div class="callout__body">A variable frequency drive runs the motor at full 60Hz from any European inverter. Standard industrial SS316L valves, fittings, and seawater membranes — stocked by distributors from Athens to Palma.</div>
+          <div class="callout__body">Assembled in Greece from industrial components. No import duties, no currency conversion, no shipping from overseas. When you call for support, we answer — because it is us. Standard industrial parts stocked from Athens to Palma — anyone can service it.</div>
         </div>
       </div>
     </div>
@@ -779,7 +794,7 @@
     <div class="section__header">
       <span class="eyebrow">How it stacks up</span>
       <h2 class="section__title">What you get for the money</h2>
-      <p class="section__sub">Branded watermakers are built for the market that buys the most of them — US sailors on 60Hz shore power. The Mediterranean is an afterthought. Oroboro is not.</p>
+      <p class="section__sub">Branded watermakers are built for the market that buys the most of them — and that is not you. Oroboro is designed for the Mediterranean, assembled in Europe, and supported by the people who built it.</p>
     </div>
 
     <div class="compare__grid">
@@ -790,7 +805,7 @@
         </div>
         <div class="compare-card__name">The typical branded unit</div>
         <ul class="compare-list">
-          <li><span class="cli">✕</span><span>16% output loss on European 50Hz — built for the US market</span></li>
+          <li><span class="cli">✕</span><span>Sold from overseas — import duties, currency risk, US-based support</span></li>
           <li><span class="cli">✕</span><span>Fixed motor speed — no solar mode, no variable output</span></li>
           <li><span class="cli">✕</span><span>Proprietary parts — specialist sourcing when something fails</span></li>
           <li><span class="cli">✕</span><span>Oil-lubricated pump on some models — oil changes at sea</span></li>
@@ -799,7 +814,7 @@
         <div class="compare-card__price">
           <div class="compare-card__price-label">Typical price range</div>
           <div class="compare-card__price-num">€3,500–8,000</div>
-          <div class="compare-card__price-note">For a product largely not designed for Europe</div>
+          <div class="compare-card__price-note">Plus import duties, shipping, and currency conversion</div>
         </div>
       </div>
 
@@ -810,17 +825,54 @@
         </div>
         <div class="compare-card__name">ORB-2540 · ORB-2521</div>
         <ul class="compare-list">
-          <li><span class="cli">✓</span><span>VFD corrects to 60Hz — full output from any European inverter</span></li>
+          <li><span class="cli">✓</span><span>Assembled in Athens — EU warranty, no import costs, no currency risk</span></li>
           <li><span class="cli">✓</span><span>Variable speed 30–60Hz — solar-only watermaking mode</span></li>
           <li><span class="cli">✓</span><span>Standard industrial parts worldwide — HP valve, SS316L fittings, seawater membrane</span></li>
-          <li><span class="cli">✓</span><span>AR ceramic plunger pump — zero oil, zero maintenance schedule</span></li>
-          <li><span class="cli">✓</span><span>Assembled and supported in Athens, Greece</span></li>
+          <li><span class="cli">✓</span><span>Italian ceramic plunger pump — zero oil, zero maintenance schedule</span></li>
+          <li><span class="cli">✓</span><span>Family business — call us and we pick up the phone</span></li>
         </ul>
         <div class="compare-card__price">
           <div class="compare-card__price-label">Starting price</div>
           <div class="compare-card__price-num">From €2,990</div>
           <div class="compare-card__price-note">Estimated · subject to prototype validation</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use case -->
+<section class="section section--usecase">
+  <div class="container">
+    <div class="section__header">
+      <span class="eyebrow">Real world</span>
+      <h2 class="section__title">Will it work on your boat?</h2>
+      <p class="section__sub">You don't need a generator, a lithium bank, or a 1,000W solar array. Here is a realistic Med cruiser and exactly what they need.</p>
+    </div>
+    <div class="usecase__card">
+      <div class="usecase__boat">
+        <div class="usecase__boat-title">The boat</div>
+        <div class="usecase__specs">
+          <div class="usecase__spec"><span class="usecase__spec-label">Battery bank</span><span class="usecase__spec-val">360 Ah lead acid @ 12V — 180 Ah usable (never discharge below 50%)</span></div>
+          <div class="usecase__spec"><span class="usecase__spec-label">Inverter</span><span class="usecase__spec-val">3,500W pure sine wave — already on board</span></div>
+          <div class="usecase__spec"><span class="usecase__spec-label">Solar</span><span class="usecase__spec-val">400W flexible panels</span></div>
+        </div>
+      </div>
+      <div class="usecase__qa">
+        <div class="usecase__q">Does he need more batteries?</div>
+        <div class="usecase__a">No. At 30Hz the watermaker draws ~700W from the battery bank — about 58A at 12V. His solar is producing ~33A at the same time. Net draw: ~25A. He can run for hours without touching the bottom half of his battery bank.</div>
+
+        <div class="usecase__q">Does he need more solar?</div>
+        <div class="usecase__a">No. 400W of solar running alongside the watermaker at 30Hz covers most of the draw. Two hours at anchor produces 60–70 litres. The solar replenishes the rest over the afternoon. Free water.</div>
+
+        <div class="usecase__q">Can he dial down the VFD?</div>
+        <div class="usecase__a">Yes — and that is the whole point. Set the VFD to 30Hz: output drops to ~35 L/h, power draw drops to ~700W. Same water, half the energy. No other watermaker on the market gives you this control from the front panel.</div>
+
+        <div class="usecase__q">What inverter does he need?</div>
+        <div class="usecase__a">Pure sine wave, 2,000W minimum continuous. His 3,500W unit is more than adequate. Modified sine wave inverters will damage the VFD — but every modern marine inverter is pure sine wave.</div>
+
+        <div class="usecase__q">What if he has lithium?</div>
+        <div class="usecase__a">Even better. A 100Ah lithium bank at 100% DoD has the same usable energy as 200Ah of lead acid — lighter, smaller, and the inverter stays stable all the way down. Run at 60Hz, make 70 L/h, done in an hour.</div>
       </div>
     </div>
   </div>
