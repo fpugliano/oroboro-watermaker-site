@@ -238,140 +238,262 @@
 
     <!-- ——— The object ——— -->
     <div class="pod-wrap">
-      <svg class="pod" viewBox="0 0 900 540" role="img" aria-label="A compact sealed watermaker: two carbon-fibre membrane tubes above a dark enclosure with a glowing display reading 30 litres per hour, one start button, and three hose connections">
+      <svg class="pod" viewBox="0 0 1000 600" role="img" aria-label="A complete twelve-volt watermaker on a carbon composite base: two filament-wound membrane pressure vessels with stainless end caps and high-pressure hose, a 20 micron and a 5 micron pre-filter, a feed pump, an energy-recovery intensifier, a carbon flush filter and a control module with display">
         <defs>
-          <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#2b3341"/><stop offset=".5" stop-color="#171d28"/><stop offset="1" stop-color="#0f141c"/>
+          <linearGradient id="frp" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f6f7f9"/><stop offset=".18" stop-color="#e2e6eb"/><stop offset=".55" stop-color="#b9c1cb"/><stop offset=".85" stop-color="#8d96a3"/><stop offset="1" stop-color="#aab2bd"/>
           </linearGradient>
-          <linearGradient id="topG" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#3b4553"/><stop offset="1" stop-color="#232b37"/>
+          <pattern id="wind" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+            <line x1="0" y1="0" x2="0" y2="14" stroke="#000" stroke-opacity=".06" stroke-width="1"/>
+          </pattern>
+          <pattern id="wind2" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+            <line x1="0" y1="0" x2="0" y2="14" stroke="#000" stroke-opacity=".05" stroke-width="1"/>
+          </pattern>
+          <linearGradient id="ss" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f4f6f8"/><stop offset=".3" stop-color="#b8bfc8"/><stop offset=".5" stop-color="#6e7783"/><stop offset=".7" stop-color="#a7afb9"/><stop offset="1" stop-color="#dfe3e8"/>
           </linearGradient>
-          <linearGradient id="tubeG" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#3a414c"/><stop offset=".3" stop-color="#1c2129"/><stop offset=".75" stop-color="#0d1015"/><stop offset="1" stop-color="#262c36"/>
+          <linearGradient id="ssH" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#dfe3e8"/><stop offset=".4" stop-color="#8c95a1"/><stop offset=".6" stop-color="#6e7783"/><stop offset="1" stop-color="#c9cfd6"/>
           </linearGradient>
-          <linearGradient id="alu" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#f2f4f7"/><stop offset=".3" stop-color="#b9c0c9"/><stop offset=".5" stop-color="#6f7884"/><stop offset=".7" stop-color="#a3abb6"/><stop offset="1" stop-color="#e3e7ec"/>
+          <linearGradient id="anod" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4a5260"/><stop offset=".45" stop-color="#1e242d"/><stop offset="1" stop-color="#2b323c"/>
+          </linearGradient>
+          <linearGradient id="alublk" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#9aa3af"/><stop offset=".5" stop-color="#626b77"/><stop offset="1" stop-color="#7d8692"/>
+          </linearGradient>
+          <linearGradient id="bowl" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#5f93b8" stop-opacity=".55"/><stop offset=".25" stop-color="#cfe6f5" stop-opacity=".55"/><stop offset=".6" stop-color="#7fb0d2" stop-opacity=".5"/><stop offset="1" stop-color="#3f6f90" stop-opacity=".65"/>
+          </linearGradient>
+          <linearGradient id="cart" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#d9d4c8"/><stop offset=".5" stop-color="#f3efe6"/><stop offset="1" stop-color="#bfb9ac"/>
+          </linearGradient>
+          <linearGradient id="capBlk" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2d3440"/><stop offset="1" stop-color="#121720"/>
+          </linearGradient>
+          <linearGradient id="baseG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2a313d"/><stop offset=".5" stop-color="#161b24"/><stop offset="1" stop-color="#0d1118"/>
           </linearGradient>
           <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stop-color="#0b1119"/><stop offset="1" stop-color="#05080d"/>
           </linearGradient>
-          <linearGradient id="sheenH" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".10"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          <linearGradient id="motor" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3a414c"/><stop offset=".5" stop-color="#171c24"/><stop offset="1" stop-color="#2a3039"/>
           </linearGradient>
-          <radialGradient id="btnG" cx="40%" cy="35%" r="70%">
-            <stop offset="0" stop-color="#2d3542"/><stop offset="1" stop-color="#0c1016"/>
-          </radialGradient>
-          <radialGradient id="floorG" cx="50%" cy="50%" r="50%">
-            <stop offset="0" stop-color="#0a7fb5" stop-opacity=".5"/><stop offset="1" stop-color="#0a7fb5" stop-opacity="0"/>
-          </radialGradient>
+          <radialGradient id="btnG" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#2d3542"/><stop offset="1" stop-color="#0c1016"/></radialGradient>
+          <radialGradient id="floorG" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#0a7fb5" stop-opacity=".5"/><stop offset="1" stop-color="#0a7fb5" stop-opacity="0"/></radialGradient>
+          <linearGradient id="dropG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfefff"/><stop offset="1" stop-color="#4FD1FF"/></linearGradient>
           <pattern id="weave" width="8" height="8" patternUnits="userSpaceOnUse">
-            <rect width="8" height="8" fill="#000" fill-opacity="0"/>
-            <rect x="0" y="0" width="4" height="4" fill="#fff" fill-opacity=".075"/>
-            <rect x="4" y="4" width="4" height="4" fill="#fff" fill-opacity=".075"/>
-            <rect x="0" y="4" width="4" height="4" fill="#000" fill-opacity=".18"/>
-            <rect x="4" y="0" width="4" height="4" fill="#000" fill-opacity=".18"/>
+            <rect x="0" y="0" width="4" height="4" fill="#fff" fill-opacity=".07"/><rect x="4" y="4" width="4" height="4" fill="#fff" fill-opacity=".07"/>
+            <rect x="0" y="4" width="4" height="4" fill="#000" fill-opacity=".18"/><rect x="4" y="0" width="4" height="4" fill="#000" fill-opacity=".18"/>
           </pattern>
-          <filter id="b2"><feGaussianBlur stdDeviation="2"/></filter>
+          <pattern id="braid" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="6" stroke="#fff" stroke-opacity=".28" stroke-width="1.2"/>
+          </pattern>
           <filter id="b10"><feGaussianBlur stdDeviation="10"/></filter>
+          <filter id="b3"><feGaussianBlur stdDeviation="3"/></filter>
           <filter id="glow"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
         </defs>
 
-        <!-- floor light + shadow -->
-        <ellipse cx="450" cy="488" rx="330" ry="24" fill="url(#floorG)"/>
-        <ellipse cx="450" cy="462" rx="300" ry="18" fill="#000" opacity=".6" filter="url(#b10)"/>
+        <!-- floor -->
+        <ellipse cx="500" cy="548" rx="420" ry="26" fill="url(#floorG)"/>
+        <ellipse cx="500" cy="520" rx="400" ry="18" fill="#000" opacity=".6" filter="url(#b10)"/>
 
-        <!-- rear membrane tube (2 of 2) -->
+        <!-- composite base plate -->
+        <rect x="60" y="476" width="880" height="34" rx="8" fill="url(#baseG)"/>
+        <rect x="60" y="476" width="880" height="34" rx="8" fill="url(#weave)"/>
+        <line x1="72" y1="477" x2="928" y2="477" stroke="rgba(255,255,255,0.25)"/>
+
+        <g transform="translate(6 133.3) scale(0.72)">
+        <!-- vertical mounting bracket for the vessels (stainless) -->
+        <rect x="430" y="214" width="10" height="262" fill="url(#ssH)"/>
+        <rect x="740" y="214" width="10" height="262" fill="url(#ssH)"/>
+        <!-- ===== LOW-PRESSURE SIDE: pump + pre-filters ===== -->
+        <!-- 12 V feed pump (motor + diaphragm head) -->
+        <rect x="150" y="178" width="92" height="52" rx="10" fill="url(#motor)"/>
+        <rect x="150" y="178" width="92" height="52" rx="10" fill="none" stroke="rgba(255,255,255,0.12)"/>
+        <g stroke="rgba(0,0,0,0.5)"><line x1="170" y1="184" x2="170" y2="224"/><line x1="184" y1="184" x2="184" y2="224"/><line x1="198" y1="184" x2="198" y2="224"/><line x1="212" y1="184" x2="212" y2="224"/></g>
+        <rect x="242" y="172" width="54" height="64" rx="8" fill="url(#alublk)"/>
+        <rect x="242" y="172" width="54" height="64" rx="8" fill="none" stroke="rgba(255,255,255,0.18)"/>
+        <g fill="#2b323c"><circle cx="252" cy="182" r="2.2"/><circle cx="286" cy="182" r="2.2"/><circle cx="252" cy="226" r="2.2"/><circle cx="286" cy="226" r="2.2"/></g>
+        <!-- pump mount -->
+        <rect x="186" y="230" width="90" height="8" fill="#1b2028"/>
+        <!-- power lead -->
+        <path d="M150 204 h-28 v272" fill="none" stroke="#0a0c10" stroke-width="5"/><path d="M150 204 h-28 v272" fill="none" stroke="#2a313c" stroke-width="2.5"/>
+
+        <!-- pre-filter housings: 20 um and 5 um -->
+        <g id="pf1" transform="translate(140 262)">
+          <rect x="0" y="0" width="70" height="30" rx="6" fill="url(#capBlk)"/>
+          <rect x="0" y="0" width="70" height="30" rx="6" fill="none" stroke="rgba(255,255,255,0.14)"/>
+          <g stroke="rgba(255,255,255,0.08)"><line x1="10" y1="6" x2="10" y2="24"/><line x1="20" y1="6" x2="20" y2="24"/><line x1="30" y1="6" x2="30" y2="24"/><line x1="40" y1="6" x2="40" y2="24"/><line x1="50" y1="6" x2="50" y2="24"/><line x1="60" y1="6" x2="60" y2="24"/></g>
+          <!-- bowl -->
+          <path d="M5 30 h60 v150 a30 30 0 0 1 -60 0 z" fill="#0d1a26"/>
+          <path d="M5 30 h60 v150 a30 30 0 0 1 -60 0 z" fill="url(#bowl)"/>
+          <!-- pleated cartridge seen through the bowl -->
+          <rect x="17" y="40" width="36" height="128" rx="4" fill="url(#cart)" opacity=".9"/>
+          <g stroke="#9a9488" stroke-opacity=".6"><line x1="23" y1="42" x2="23" y2="166"/><line x1="29" y1="42" x2="29" y2="166"/><line x1="35" y1="42" x2="35" y2="166"/><line x1="41" y1="42" x2="41" y2="166"/><line x1="47" y1="42" x2="47" y2="166"/></g>
+          <!-- highlight -->
+          <path d="M11 36 v140" stroke="#fff" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+          <path d="M5 30 h60 v150 a30 30 0 0 1 -60 0 z" fill="none" stroke="rgba(255,255,255,0.22)"/>
+          <text x="35" y="202" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" letter-spacing="1.5" fill="rgba(234,240,247,0.7)">20 µm</text>
+        </g>
+        <g transform="translate(228 262)">
+          <rect x="0" y="0" width="70" height="30" rx="6" fill="url(#capBlk)"/>
+          <rect x="0" y="0" width="70" height="30" rx="6" fill="none" stroke="rgba(255,255,255,0.14)"/>
+          <g stroke="rgba(255,255,255,0.08)"><line x1="10" y1="6" x2="10" y2="24"/><line x1="20" y1="6" x2="20" y2="24"/><line x1="30" y1="6" x2="30" y2="24"/><line x1="40" y1="6" x2="40" y2="24"/><line x1="50" y1="6" x2="50" y2="24"/><line x1="60" y1="6" x2="60" y2="24"/></g>
+          <path d="M5 30 h60 v150 a30 30 0 0 1 -60 0 z" fill="#0d1a26"/>
+          <path d="M5 30 h60 v150 a30 30 0 0 1 -60 0 z" fill="url(#bowl)"/>
+          <rect x="17" y="40" width="36" height="128" rx="4" fill="url(#cart)" opacity=".9"/>
+          <g stroke="#9a9488" stroke-opacity=".6"><line x1="21" y1="42" x2="21" y2="166"/><line x1="25" y1="42" x2="25" y2="166"/><line x1="29" y1="42" x2="29" y2="166"/><line x1="33" y1="42" x2="33" y2="166"/><line x1="37" y1="42" x2="37" y2="166"/><line x1="41" y1="42" x2="41" y2="166"/><line x1="45" y1="42" x2="45" y2="166"/><line x1="49" y1="42" x2="49" y2="166"/></g>
+          <path d="M11 36 v140" stroke="#fff" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+          <path d="M5 30 h60 v150 a30 30 0 0 1 -60 0 z" fill="none" stroke="rgba(255,255,255,0.22)"/>
+          <text x="35" y="202" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" letter-spacing="1.5" fill="rgba(234,240,247,0.7)">5 µm</text>
+        </g>
+        <!-- filter bracket + low-pressure hoses (black reinforced) -->
+        <rect x="134" y="252" width="172" height="10" rx="3" fill="#1b2028"/>
+        <path d="M296 204 h18 v40 h-70 v6" fill="none" stroke="#0a0c10" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M296 204 h18 v40 h-70 v6" fill="none" stroke="#1f252e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M210 250 h18" fill="none" stroke="#0a0c10" stroke-width="7"/><path d="M210 250 h18" fill="none" stroke="#1f252e" stroke-width="4"/>
+        <!-- sea water in: from base barb up to pump -->
+        <path d="M100 476 v-180 a14 14 0 0 1 14 -14 h36" fill="none" stroke="#0a0c10" stroke-width="7" stroke-linecap="round"/>
+        <path d="M100 476 v-180 a14 14 0 0 1 14 -14 h36" fill="none" stroke="#1f252e" stroke-width="4" stroke-linecap="round"/>
+        <!-- 5um out to intensifier -->
+        <path d="M298 250 h30 v150 h40" fill="none" stroke="#0a0c10" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M298 250 h30 v150 h40" fill="none" stroke="#1f252e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- ===== ENERGY-RECOVERY INTENSIFIER (two cylinders, centre valve block) ===== -->
+        <g transform="translate(368 368)">
+          <rect x="0" y="12" width="118" height="60" rx="30" fill="url(#anod)"/>
+          <rect x="0" y="12" width="118" height="60" rx="30" fill="none" stroke="rgba(255,255,255,0.12)"/>
+          <rect x="16" y="18" width="88" height="7" rx="3.5" fill="#fff" opacity=".07"/>
+          <rect x="186" y="12" width="118" height="60" rx="30" fill="url(#anod)"/>
+          <rect x="186" y="12" width="118" height="60" rx="30" fill="none" stroke="rgba(255,255,255,0.12)"/>
+          <rect x="202" y="18" width="88" height="7" rx="3.5" fill="#fff" opacity=".07"/>
+          <!-- tie rods -->
+          <g fill="url(#ss)"><rect x="6" y="6" width="6" height="72" rx="2"/><rect x="106" y="6" width="6" height="72" rx="2"/><rect x="192" y="6" width="6" height="72" rx="2"/><rect x="292" y="6" width="6" height="72" rx="2"/></g>
+          <!-- centre block -->
+          <rect x="112" y="0" width="80" height="84" rx="8" fill="url(#alublk)"/>
+          <rect x="112" y="0" width="80" height="84" rx="8" fill="none" stroke="rgba(255,255,255,0.2)"/>
+          <g fill="#2b323c"><circle cx="124" cy="12" r="3"/><circle cx="180" cy="12" r="3"/><circle cx="124" cy="72" r="3"/><circle cx="180" cy="72" r="3"/></g>
+          <!-- HP ports on block -->
+          <rect x="140" y="-14" width="24" height="16" rx="3" fill="url(#ss)"/>
+          <rect x="196" y="30" width="18" height="14" rx="3" fill="url(#ss)"/>
+          <!-- foot -->
+          <rect x="30" y="84" width="244" height="24" fill="#1b2028"/>
+        </g>
+
+        <!-- ===== HIGH-PRESSURE SIDE: two 2.5 x 21 in FRP vessels ===== -->
+        <!-- lower vessel -->
         <g>
-          <rect x="214" y="96" width="400" height="46" rx="23" fill="url(#tubeG)"/>
-          <rect x="214" y="96" width="400" height="46" rx="23" fill="url(#weave)"/>
-          <rect x="214" y="96" width="30" height="46" rx="6" fill="url(#alu)"/>
-          <rect x="584" y="96" width="30" height="46" rx="6" fill="url(#alu)"/>
-          <rect x="250" y="101" width="330" height="8" rx="4" fill="#fff" opacity=".06"/>
+          <rect x="350" y="300" width="480" height="58" rx="29" fill="url(#frp)"/>
+          <rect x="350" y="300" width="480" height="58" rx="29" fill="url(#wind)"/>
+          <rect x="350" y="300" width="480" height="58" rx="29" fill="url(#wind2)"/>
+          <rect x="372" y="306" width="436" height="9" rx="4.5" fill="#fff" opacity=".5"/>
+          <!-- stainless end caps with retaining-ring grooves -->
+          <rect x="336" y="296" width="42" height="66" rx="6" fill="url(#ss)"/>
+          <rect x="802" y="296" width="42" height="66" rx="6" fill="url(#ss)"/>
+          <g stroke="#2b323c" stroke-opacity=".7"><line x1="346" y1="298" x2="346" y2="360"/><line x1="368" y1="298" x2="368" y2="360"/><line x1="812" y1="298" x2="812" y2="360"/><line x1="834" y1="298" x2="834" y2="360"/></g>
+          <!-- centre product ports (1/4 in tube) -->
+          <rect x="326" y="323" width="12" height="12" rx="2" fill="url(#ss)"/>
+          <rect x="842" y="323" width="12" height="12" rx="2" fill="url(#ss)"/>
+          <!-- side HP ports (feed in left-top, brine out right-top) -->
+          <rect x="348" y="282" width="18" height="16" rx="3" fill="url(#ss)"/>
+          <rect x="814" y="282" width="18" height="16" rx="3" fill="url(#ss)"/>
+          <!-- saddles -->
+          <path d="M428 300 a30 30 0 0 0 0 58" fill="none" stroke="url(#ssH)" stroke-width="8"/>
+          <path d="M738 300 a30 30 0 0 0 0 58" fill="none" stroke="url(#ssH)" stroke-width="8"/>
         </g>
-        <!-- front membrane tube (1 of 2) -->
+        <!-- upper vessel -->
         <g>
-          <rect x="186" y="128" width="400" height="50" rx="25" fill="url(#tubeG)"/>
-          <rect x="186" y="128" width="400" height="50" rx="25" fill="url(#weave)"/>
-          <rect x="186" y="128" width="32" height="50" rx="6" fill="url(#alu)"/>
-          <rect x="554" y="128" width="32" height="50" rx="6" fill="url(#alu)"/>
-          <rect x="224" y="134" width="324" height="9" rx="4.5" fill="#fff" opacity=".07"/>
-          <!-- cap bolts -->
-          <g fill="#4a525e"><circle cx="202" cy="140" r="2"/><circle cx="202" cy="166" r="2"/><circle cx="570" cy="140" r="2"/><circle cx="570" cy="166" r="2"/></g>
+          <rect x="350" y="224" width="480" height="58" rx="29" fill="url(#frp)"/>
+          <rect x="350" y="224" width="480" height="58" rx="29" fill="url(#wind)"/>
+          <rect x="350" y="224" width="480" height="58" rx="29" fill="url(#wind2)"/>
+          <rect x="372" y="230" width="436" height="9" rx="4.5" fill="#fff" opacity=".5"/>
+          <rect x="336" y="220" width="42" height="66" rx="6" fill="url(#ss)"/>
+          <rect x="802" y="220" width="42" height="66" rx="6" fill="url(#ss)"/>
+          <g stroke="#2b323c" stroke-opacity=".7"><line x1="346" y1="222" x2="346" y2="284"/><line x1="368" y1="222" x2="368" y2="284"/><line x1="812" y1="222" x2="812" y2="284"/><line x1="834" y1="222" x2="834" y2="284"/></g>
+          <rect x="326" y="247" width="12" height="12" rx="2" fill="url(#ss)"/>
+          <rect x="842" y="247" width="12" height="12" rx="2" fill="url(#ss)"/>
+          <rect x="348" y="206" width="18" height="16" rx="3" fill="url(#ss)"/>
+          <rect x="814" y="206" width="18" height="16" rx="3" fill="url(#ss)"/>
+          <path d="M428 224 a30 30 0 0 0 0 58" fill="none" stroke="url(#ssH)" stroke-width="8"/>
+          <path d="M738 224 a30 30 0 0 0 0 58" fill="none" stroke="url(#ssH)" stroke-width="8"/>
         </g>
-        <!-- high pressure link between tubes (right end) -->
-        <path d="M600 119 h22 a10 10 0 0 1 10 10 v14 a10 10 0 0 1 -10 10 h-18" fill="none" stroke="#9aa3b0" stroke-width="5" stroke-linecap="round"/>
-        <path d="M600 119 h22 a10 10 0 0 1 10 10 v14 a10 10 0 0 1 -10 10 h-18" fill="none" stroke="#e3e8ef" stroke-width="1.2" stroke-linecap="round" opacity=".5"/>
-        <!-- tube saddles -->
-        <rect x="300" y="176" width="26" height="14" fill="#1a1f28"/><rect x="450" y="176" width="26" height="14" fill="#1a1f28"/>
+        <!-- stainless-braided HP hoses with crimp ends -->
+        <!-- intensifier -> lower vessel feed (left end, top port) -->
+        <path d="M520 354 v-26 a12 12 0 0 0 -12 -12 h-130 a14 14 0 0 1 -14 -14 v-12" fill="none" stroke="#5b6572" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M520 354 v-26 a12 12 0 0 0 -12 -12 h-130 a14 14 0 0 1 -14 -14 v-12" fill="none" stroke="url(#braid)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- series link: lower right -> upper right -->
+        <path d="M823 282 v-40 a14 14 0 0 1 14 -14 h18 a14 14 0 0 1 14 14 v44 a14 14 0 0 1 -14 14 h-10 v4" fill="none" stroke="#5b6572" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" transform="translate(0 0)"/>
+        <path d="M823 282 v-40 a14 14 0 0 1 14 -14 h18 a14 14 0 0 1 14 14 v44 a14 14 0 0 1 -14 14 h-10 v4" fill="none" stroke="url(#braid)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- brine return: upper left top port -> intensifier right port -->
+        <path d="M357 206 v-18 a14 14 0 0 1 14 -14 h190 a14 14 0 0 1 14 14 v212 h8" fill="none" stroke="#5b6572" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M357 206 v-18 a14 14 0 0 1 14 -14 h190 a14 14 0 0 1 14 14 v212 h8" fill="none" stroke="url(#braid)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- crimp fittings -->
+        <g fill="url(#ss)"><rect x="515" y="340" width="10" height="16" rx="2"/><rect x="818" y="268" width="10" height="16" rx="2"/><rect x="352" y="192" width="10" height="16" rx="2"/><rect x="570" y="386" width="10" height="16" rx="2"/></g>
+        <!-- product tubes (white 1/4 in) from centre ports, joined, to the control head -->
+        <path d="M854 329 h14 v100" fill="none" stroke="#e8ecf0" stroke-width="2.5"/>
+        <path d="M854 253 h14 v76" fill="none" stroke="#e8ecf0" stroke-width="2.5"/>
+        <path d="M576 452 v24" fill="none" stroke="#0a0c10" stroke-width="7"/><path d="M576 452 v24" fill="none" stroke="#1f252e" stroke-width="4"/>
 
-        <!-- enclosure: top face then front face -->
-        <path d="M152 190 L748 190 L724 170 L176 170 Z" fill="url(#topG)"/>
-        <path d="M152 190 L748 190 L724 170 L176 170 Z" fill="url(#sheenH)"/>
-        <rect x="140" y="190" width="620" height="220" rx="16" fill="url(#bodyG)"/>
-        <rect x="140" y="190" width="620" height="220" rx="16" fill="url(#weave)"/>
-        <rect x="140" y="190" width="620" height="220" rx="16" fill="none" stroke="rgba(255,255,255,0.09)"/>
-        <line x1="156" y1="191" x2="744" y2="191" stroke="rgba(255,255,255,0.25)"/>
-        <!-- vent slots -->
-        <g stroke="rgba(0,0,0,0.6)" stroke-width="2">
-          <line x1="172" y1="236" x2="172" y2="366"/><line x1="182" y1="236" x2="182" y2="366"/><line x1="192" y1="236" x2="192" y2="366"/><line x1="202" y1="236" x2="202" y2="366"/>
+        <!-- carbon flush filter (fresh water rinse, dechlorinates tank water) -->
+        <g transform="translate(888 236)">
+          <rect x="0" y="0" width="44" height="22" rx="5" fill="url(#capBlk)"/>
+          <rect x="4" y="22" width="36" height="92" rx="12" fill="#1a2430"/>
+          <rect x="4" y="22" width="36" height="92" rx="12" fill="none" stroke="rgba(255,255,255,0.18)"/>
+          <rect x="10" y="30" width="8" height="76" rx="4" fill="#fff" opacity=".08"/>
+          <text x="22" y="132" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" font-weight="600" letter-spacing="1.2" fill="rgba(234,240,247,0.6)">CARBON</text>
         </g>
-        <!-- wordmark + plate -->
-        <text x="225" y="246" font-family="Inter, sans-serif" font-size="13" font-weight="600" letter-spacing="4" fill="rgba(255,255,255,0.55)">OROBORO</text>
-        <text x="225" y="264" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="2" fill="rgba(255,255,255,0.28)">12 V DC · SEALED UNIT</text>
+        <path d="M910 350 v40" fill="none" stroke="#0a0c10" stroke-width="6"/><path d="M910 350 v40" fill="none" stroke="#1f252e" stroke-width="3.5"/>
 
-        <!-- start button -->
-        <circle cx="300" cy="330" r="40" fill="#0a0d12" stroke="rgba(255,255,255,0.1)"/>
-        <circle cx="300" cy="330" r="33" fill="url(#btnG)" stroke="rgba(255,255,255,0.14)"/>
-        <circle class="ring-glow" cx="300" cy="330" r="36" fill="none" stroke="#4FD1FF" stroke-width="2" filter="url(#glow)"/>
-        <path d="M296 320 l13 10 l-13 10 z" fill="#EAF0F7"/>
-        <text x="300" y="389" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="2.5" fill="rgba(255,255,255,0.35)">START</text>
-        <!-- small rinse button -->
-        <rect x="364" y="318" width="54" height="24" rx="12" fill="#0a0d12" stroke="rgba(255,255,255,0.14)"/>
-        <text x="391" y="334" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" letter-spacing="2" fill="rgba(255,255,255,0.6)">RINSE</text>
-
+        </g>
+        <!-- ===== CONTROL HEAD (display + start) ===== -->
+        <rect x="700" y="226" width="290" height="250" rx="14" fill="#141a24"/>
+        <rect x="700" y="226" width="290" height="250" rx="14" fill="url(#weave)"/>
+        <rect x="700" y="226" width="290" height="250" rx="14" fill="none" stroke="rgba(255,255,255,0.12)"/>
+        <line x1="714" y1="227" x2="976" y2="227" stroke="rgba(255,255,255,0.25)"/>
         <!-- display -->
-        <rect x="446" y="212" width="290" height="176" rx="10" fill="url(#glass)" stroke="rgba(255,255,255,0.1)"/>
-        <rect x="446" y="212" width="290" height="60" rx="10" fill="#fff" opacity=".025"/>
-        <circle class="ring-glow" cx="464" cy="232" r="3.5" fill="#4FD1FF" filter="url(#glow)"/>
-        <text x="474" y="236" font-family="Inter, sans-serif" font-size="9.5" letter-spacing="2.5" fill="#4FD1FF">MAKING WATER</text>
-        <text x="722" y="236" text-anchor="end" font-family="Inter, sans-serif" font-size="9" letter-spacing="1.5" fill="rgba(234,240,247,0.45)">12.8 V · 9.1 A</text>
-        <text x="462" y="306" font-family="Inter, sans-serif" font-size="54" font-weight="300" fill="#EAF0F7" filter="url(#glow)">30.4</text>
-        <text x="584" y="306" font-family="Inter, sans-serif" font-size="15" fill="rgba(234,240,247,0.6)">L/h</text>
-        <text x="462" y="326" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="2" fill="rgba(234,240,247,0.4)">PRODUCT FLOW</text>
+        <rect x="712" y="238" width="266" height="160" rx="10" fill="url(#glass)" stroke="rgba(255,255,255,0.1)"/>
+        <rect x="712" y="238" width="266" height="54" rx="10" fill="#fff" opacity=".025"/>
+        <circle class="ring-glow" cx="730" cy="258" r="3.5" fill="#4FD1FF" filter="url(#glow)"/>
+        <text x="740" y="262" font-family="Inter, sans-serif" font-size="9.5" letter-spacing="2.5" fill="#4FD1FF">MAKING WATER</text>
+        <text x="964" y="262" text-anchor="end" font-family="Inter, sans-serif" font-size="9" letter-spacing="1.5" fill="rgba(234,240,247,0.45)">12.8 V · 9.1 A</text>
+        <text x="726" y="326" font-family="Inter, sans-serif" font-size="50" font-weight="300" fill="#EAF0F7" filter="url(#glow)">30.4</text>
+        <text x="838" y="326" font-family="Inter, sans-serif" font-size="14" fill="rgba(234,240,247,0.6)">L/h</text>
+        <text x="726" y="344" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="2" fill="rgba(234,240,247,0.4)">PRODUCT FLOW</text>
         <g font-family="Inter, sans-serif">
-          <text x="618" y="276" font-size="8.5" letter-spacing="1.5" fill="rgba(234,240,247,0.4)">SALINITY</text>
-          <text x="618" y="296" font-size="18" font-weight="300" fill="#EAF0F7">212 <tspan font-size="10" fill="rgba(234,240,247,0.55)">ppm</tspan></text>
-          <text x="618" y="316" font-size="8.5" letter-spacing="1.5" fill="rgba(234,240,247,0.4)">NEXT RINSE</text>
-          <text x="618" y="334" font-size="13" fill="#EAF0F7">4d 12h <tspan fill="#4FD1FF">auto</tspan></text>
+          <text x="876" y="298" font-size="8.5" letter-spacing="1.5" fill="rgba(234,240,247,0.4)">SALINITY</text>
+          <text x="876" y="316" font-size="17" font-weight="300" fill="#EAF0F7">212 <tspan font-size="9.5" fill="rgba(234,240,247,0.55)">ppm</tspan></text>
+          <text x="876" y="334" font-size="8.5" letter-spacing="1.5" fill="rgba(234,240,247,0.4)">NEXT RINSE</text>
+          <text x="876" y="350" font-size="12" fill="#EAF0F7">4d 12h <tspan fill="#4FD1FF">auto</tspan></text>
         </g>
-        <!-- tank bar -->
-        <text x="462" y="352" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="2" fill="rgba(234,240,247,0.4)">TANK</text>
-        <rect x="462" y="360" width="258" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
-        <rect x="462" y="360" width="160" height="6" rx="3" fill="#4FD1FF"/>
-        <text x="722" y="354" text-anchor="end" font-family="Inter, sans-serif" font-size="9" fill="rgba(234,240,247,0.6)">62 %</text>
+        <text x="726" y="366" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="2" fill="rgba(234,240,247,0.4)">TANK</text>
+        <rect x="726" y="374" width="238" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+        <rect x="726" y="374" width="148" height="6" rx="3" fill="#4FD1FF"/>
+        <text x="964" y="368" text-anchor="end" font-family="Inter, sans-serif" font-size="9" fill="rgba(234,240,247,0.6)">62 %</text>
+        <!-- start + rinse -->
+        <circle cx="760" cy="438" r="30" fill="#0a0d12" stroke="rgba(255,255,255,0.1)"/>
+        <circle cx="760" cy="438" r="24" fill="url(#btnG)" stroke="rgba(255,255,255,0.14)"/>
+        <circle class="ring-glow" cx="760" cy="438" r="27" fill="none" stroke="#4FD1FF" stroke-width="2" filter="url(#glow)"/>
+        <path d="M756 430 l11 8 l-11 8 z" fill="#EAF0F7"/>
+        <rect x="806" y="426" width="56" height="24" rx="12" fill="#0a0d12" stroke="rgba(255,255,255,0.14)"/>
+        <text x="834" y="442" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" letter-spacing="2" fill="rgba(255,255,255,0.6)">RINSE</text>
+        <text x="976" y="444" text-anchor="end" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="4" fill="rgba(255,255,255,0.5)">OROBORO</text>
+        <text x="976" y="458" text-anchor="end" font-family="Inter, sans-serif" font-size="7.5" letter-spacing="2" fill="rgba(255,255,255,0.28)">12 V DC · SEALED UNIT</text>
 
-        <!-- hose connections -->
-        <g>
-          <rect x="560" y="410" width="22" height="30" rx="4" fill="url(#alu)"/><rect x="556" y="414" width="30" height="6" rx="2" fill="#6b7482"/>
-          <rect x="620" y="410" width="22" height="30" rx="4" fill="url(#alu)"/><rect x="616" y="414" width="30" height="6" rx="2" fill="#6b7482"/>
-          <rect x="680" y="410" width="22" height="30" rx="4" fill="url(#alu)"/><rect x="676" y="414" width="30" height="6" rx="2" fill="#6b7482"/>
-          <g font-family="Inter, sans-serif" font-size="7.5" letter-spacing="1.5" fill="rgba(234,240,247,0.45)" text-anchor="middle">
-            <text x="571" y="456">SEA</text><text x="631" y="456">BRINE</text><text x="691" y="456">FRESH</text>
-          </g>
-          <!-- power lead -->
-          <path d="M160 410 v18 h-30" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/>
-          <path d="M160 410 v18 h-30" fill="none" stroke="#2b3341" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- product line into the control head (salinity probe), then out -->
+        <path d="M631 442 h69" fill="none" stroke="#e8ecf0" stroke-width="2.5"/>
+
+        <!-- hose connections on the base edge -->
+        <g font-family="Inter, sans-serif" font-size="7.5" letter-spacing="1.5" fill="rgba(234,240,247,0.45)" text-anchor="middle">
+          <rect x="67" y="500" width="22" height="26" rx="4" fill="url(#ss)"/><text x="78" y="542">SEA</text>
+          <rect x="410" y="500" width="22" height="26" rx="4" fill="url(#ss)"/><text x="421" y="542">BRINE</text>
+          <rect x="839" y="500" width="22" height="26" rx="4" fill="url(#ss)"/><text x="850" y="542">FRESH</text>
         </g>
         <!-- feet -->
-        <rect x="190" y="410" width="36" height="10" rx="3" fill="#0a0d12"/><rect x="480" y="410" width="36" height="10" rx="3" fill="#0a0d12"/>
+        <g fill="#0a0d12"><rect x="120" y="510" width="40" height="10" rx="3"/><rect x="900" y="510" width="40" height="10" rx="3"/><rect x="560" y="510" width="40" height="10" rx="3"/></g>
 
-        <!-- the drop from the FRESH port -->
-        <g class="drop">
-          <path d="M691 446 c-6 9 -7 12 -7 16 a7 7 0 0 0 14 0 c0 -4 -1 -7 -7 -16 z" fill="url(#dropG)"/>
-        </g>
-        <defs>
-          <linearGradient id="dropG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfefff"/><stop offset="1" stop-color="#4FD1FF"/></linearGradient>
-        </defs>
+        <!-- drop from FRESH -->
+        <g class="drop"><path d="M850 530 c-6 9 -7 12 -7 16 a7 7 0 0 0 14 0 c0 -4 -1 -7 -7 -16 z" fill="url(#dropG)"/></g>
       </svg>
     </div>
 
@@ -567,7 +689,7 @@
     <g class="drop" transform="translate(770 300)"><path d="M0 0 c-6 9 -7 12 -7 16 a7 7 0 0 0 14 0 c0 -4 -1 -7 -7 -16 z" fill="#4FD1FF" opacity=".85"/></g>
   </svg>
   <div class="orbit__caption">
-    <div class="eyebrow eyebrow--gold">A boat belongs out there</div>
+    <div class="eyebrow eyebrow--gold">Water from space</div>
     <p>When you can make your own water, the only thing between you and anywhere is the weather.</p>
   </div>
 </section>
