@@ -3,1466 +3,479 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oroboro Watermaker — Coming Soon</title>
-  <meta name="description" content="An affordable marine RO watermaker built by two sailors with 30,000 miles across 4 continents and 2 oceans. Finally a watermaker you can afford. Make your own water — on anchor, at sea, wherever you are.">
+  <title>Oroboro — Something is coming</title>
+  <meta name="description" content="A sealed, twelve-volt watermaker that looks after itself. No inverter. No generator. No new holes in your boat. Engineered with aerospace discipline. Revealed 2027.">
   <link rel="icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" href="logo-mark.png">
+  <meta property="og:title" content="Oroboro — Something is coming">
+  <meta property="og:description" content="A sealed, twelve-volt watermaker that looks after itself. Revealed 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://watermaker.sailingoroboro.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --accent: #0071E3;
+      --bg: #050a14;
+      --bg-2: #0B1426;
+      --ink: #EAF0F7;
+      --ink-dim: rgba(234,240,247,0.62);
+      --ink-faint: rgba(234,240,247,0.34);
       --gold: #c8b89a;
-      --navy: #0B1426;
-      --navy-deep: #070e1a;
-      --bg: #FFFFFF;
-      --bg-alt: #F5F5F7;
-      --text: #1D1D1F;
-      --muted: #6E6E73;
-      --border: #D2D2D7;
-      --green: #34C759;
-      --radius: 14px;
-      --radius-lg: 20px;
-      --max-w: 1080px;
+      --water: #4FD1FF;
+      --water-deep: #0a7fb5;
+      --line: rgba(255,255,255,0.08);
+      --max: 980px;
     }
-
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text);
       background: var(--bg);
+      color: var(--ink);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      line-height: 1.6;
     }
-
-    /* ——— Typography ——— */
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-    .eyebrow--blue { color: var(--accent); }
-
-    /* ——— Layout ——— */
-    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
-    .section { padding: 96px 0; }
-    .section__header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
-    .section__title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-    .section__sub { font-size: 1rem; line-height: 1.65; color: var(--muted); }
-
-    /* ——— Buttons ——— */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 12px 24px;
-      border-radius: 24px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      font-family: inherit;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      transition: all 0.2s;
-      letter-spacing: -0.01em;
-    }
-    .btn--primary { background: var(--accent); color: #fff; }
-    .btn--primary:hover { background: #0062c3; transform: translateY(-1px); }
-    .btn--outline { background: transparent; color: rgba(255,255,255,0.85); border: 1.5px solid rgba(255,255,255,0.25); }
-    .btn--outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
-    .btn--gold { background: var(--gold); color: var(--navy-deep); }
-    .btn--gold:hover { opacity: 0.9; transform: translateY(-1px); }
-    .btn--dark { background: var(--text); color: #fff; }
-    .btn--dark:hover { opacity: 0.85; }
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .serif { font-family: 'Playfair Display', Georgia, serif; }
 
     /* ——— Nav ——— */
     .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 24px;
-      height: 60px;
-      background: rgba(7, 14, 26, 0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 64px;
+      background: linear-gradient(to bottom, rgba(5,10,20,0.85), rgba(5,10,20,0));
     }
-    .nav__brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-    .nav__mark { height: 22px; width: auto; }
-    .nav__name { font-size: 0.88rem; font-weight: 600; color: #fff; letter-spacing: 0.01em; }
-    .nav__name span { color: var(--gold); }
+    .nav__brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav__mark { height: 24px; width: 24px; }
+    .nav__name { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); }
     .nav__cta {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #fff;
-      background: var(--accent);
-      border-radius: 20px;
-      padding: 7px 16px;
-      text-decoration: none;
-      transition: opacity 0.2s;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; text-decoration: none;
+      color: var(--ink); border: 1px solid rgba(255,255,255,0.22); border-radius: 999px; padding: 8px 16px;
+      transition: border-color .2s, background .2s;
     }
-    .nav__cta:hover { opacity: 0.85; }
+    .nav__cta:hover { border-color: var(--water); background: rgba(79,209,255,0.08); }
 
     /* ——— Hero ——— */
     .hero {
-      min-height: 100vh;
-      background: linear-gradient(155deg, var(--navy-deep) 0%, var(--navy) 55%, #0d2040 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 100px 24px 72px;
-      position: relative;
+      position: relative; min-height: 100vh;
+      display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; align-items: center; text-align: center;
+      padding: 110px 24px 80px;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 65%, rgba(10,127,181,0.22), transparent 70%),
+        radial-gradient(ellipse 120% 60% at 50% 100%, rgba(11,20,38,1), transparent 60%),
+        var(--bg);
       overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 50% at 50% 85%, rgba(0,113,227,0.14) 0%, transparent 70%);
-      pointer-events: none;
+    .stars { position: absolute; inset: 0; pointer-events: none; opacity: 0.6; }
+    .hero__inner { position: relative; z-index: 1; max-width: 820px; width: 100%; min-width: 0; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-dim); margin-bottom: 28px;
     }
-    .hero__waves {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      opacity: 0.06;
-      pointer-events: none;
-    }
-    .hero__content { position: relative; z-index: 1; max-width: 760px; }
-
-    .hero__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(200,184,154,0.1);
-      border: 1px solid rgba(200,184,154,0.22);
-      border-radius: 20px;
-      padding: 6px 14px;
-      margin-bottom: 2rem;
-    }
-    .hero__badge-dot {
-      width: 6px; height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      animation: pulse 2.2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.25; }
-    }
-    .hero__badge-text {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
+    .eyebrow::before, .eyebrow::after { content: ""; width: 28px; height: 1px; background: rgba(255,255,255,0.22); }
+    .eyebrow--gold { color: var(--gold); }
     .hero h1 {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.6rem, 6vw, 4.6rem);
-      font-weight: 700;
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-      color: #fff;
-      margin-bottom: 1.5rem;
+      font-weight: 400; font-size: clamp(2.2rem, 6.2vw, 4.4rem);
+      line-height: 1.08; letter-spacing: -0.015em; margin: 0 auto 20px; max-width: 16ch;
     }
-    .hero h1 em { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-style: italic; font-weight: 700; color: var(--gold); }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero__sub { font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--ink-dim); max-width: 520px; margin: 0 auto 36px; font-weight: 300; }
+    .pod-wrap { position: relative; width: min(760px, 100%); margin: 18px auto 10px; }
+    .pod { width: 100%; height: auto; display: block; animation: float 9s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .ring-glow { animation: pulse 3.6s ease-in-out infinite; transform-origin: center; }
+    @keyframes pulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+    .drop { animation: drip 4.8s ease-in infinite; }
+    @keyframes drip {
+      0%   { transform: translateY(0) scale(1); opacity: 0; }
+      10%  { opacity: 1; }
+      55%  { transform: translateY(0) scale(1); opacity: 1; }
+      85%  { transform: translateY(58px) scale(.85); opacity: 1; }
+      100% { transform: translateY(66px) scale(.4); opacity: 0; }
+    }
+    .ripple { animation: ripple 4.8s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes ripple { 0%,80% { transform: scale(.2); opacity: 0; } 86% { opacity: .9; } 100% { transform: scale(1); opacity: 0; } }
+    .ripple--2 { animation-delay: .25s; }
+    @media (prefers-reduced-motion: reduce) { .pod, .ring-glow, .drop, .ripple { animation: none; } }
+    .hero__hint { margin-top: 36px; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); }
+    .hero__hint span { display: block; width: 1px; height: 40px; margin: 10px auto 0; background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent); }
 
-    .hero__sub {
-      font-size: clamp(1rem, 2vw, 1.12rem);
-      font-weight: 400;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.6);
-      max-width: 560px;
-      margin: 0 auto 2.5rem;
-    }
+    /* ——— Story ——— */
+    .story { padding: 120px 0; border-top: 1px solid var(--line); }
+    .story--tint { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 50%, var(--bg) 100%); }
+    .story__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .story__grid--flip .story__art { order: -1; }
+    .story h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(1.8rem, 3.6vw, 2.7rem); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 20px; }
+    .story h2 em { font-style: italic; color: var(--gold); }
+    .story p { color: var(--ink-dim); font-weight: 300; font-size: 1.04rem; margin-bottom: 16px; max-width: 46ch; }
+    .story p strong { color: var(--ink); font-weight: 500; }
+    .story__art { display: flex; justify-content: center; }
+    .story__art svg { width: 100%; max-width: 380px; height: auto; }
+    .quote { text-align: center; max-width: 720px; margin: 0 auto; }
+    .quote h2 { font-size: clamp(1.9rem, 4.2vw, 3.2rem); margin-bottom: 24px; }
+    .quote p { margin-left: auto; margin-right: auto; max-width: 56ch; }
 
-    .hero__actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 4rem;
-    }
+    /* ——— Principles ——— */
+    .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; margin-top: 56px; }
+    .principle { background: var(--bg); padding: 34px 28px; }
+    .principle__num { font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: var(--gold); font-size: 1.1rem; margin-bottom: 14px; }
+    .principle h3 { font-size: 1rem; font-weight: 500; margin-bottom: 8px; }
+    .principle p { font-size: 0.92rem; margin: 0; }
 
-    .hero__stats {
-      display: flex;
-      gap: 40px;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding-top: 2.5rem;
-      border-top: 1px solid rgba(255,255,255,0.09);
-    }
-    .hero__stat { text-align: center; }
-    .hero__stat-num {
-      display: block;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.03em;
-      line-height: 1;
-    }
-    .hero__stat-label {
-      display: block;
-      font-size: 0.68rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.4);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 5px;
-    }
+    /* ——— Reveal timeline ——— */
+    .reveal { padding: 120px 0; text-align: center; border-top: 1px solid var(--line); }
+    .reveal__big { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(3rem, 12vw, 8.5rem); line-height: 1; letter-spacing: -0.03em; color: var(--ink); margin: 16px 0 8px; }
+    .reveal__big span { color: var(--gold); font-style: italic; }
+    .reveal__sub { color: var(--ink-dim); font-weight: 300; max-width: 48ch; margin: 0 auto 48px; }
+    .steps { display: flex; justify-content: center; gap: 0; max-width: 680px; margin: 0 auto; }
+    .step { flex: 1; position: relative; padding-top: 22px; font-size: 0.78rem; letter-spacing: 0.04em; color: var(--ink-faint); }
+    .step::before { content: ""; position: absolute; top: 5px; left: 50%; width: 9px; height: 9px; border-radius: 50%; transform: translateX(-50%); background: var(--bg); border: 1px solid rgba(255,255,255,0.3); }
+    .step::after { content: ""; position: absolute; top: 9px; left: calc(50% + 6px); right: calc(-50% + 6px); height: 1px; background: rgba(255,255,255,0.14); }
+    .step:last-child::after { display: none; }
+    .step--on { color: var(--ink); }
+    .step--on::before { background: var(--water); border-color: var(--water); box-shadow: 0 0 14px rgba(79,209,255,0.7); }
 
-    /* ——— Strip ——— */
-    .strip { background: var(--gold); overflow: hidden; padding: 11px 0; }
-    .strip__track {
-      display: flex;
-      animation: marquee 32s linear infinite;
-      white-space: nowrap;
-      width: max-content;
+    /* ——— Capture ——— */
+    .capture { padding: 120px 0 100px; border-top: 1px solid var(--line); background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(10,127,181,0.16), transparent 70%); text-align: center; }
+    .capture h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 16px; }
+    .capture p { color: var(--ink-dim); font-weight: 300; max-width: 46ch; margin: 0 auto 32px; }
+    .form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .form input {
+      flex: 1; height: 52px; padding: 0 18px; border-radius: 999px; font: inherit; font-size: 0.95rem;
+      color: var(--ink); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.18); outline: none;
     }
-    .strip__item {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--navy-deep);
-      padding: 0 28px;
+    .form input:focus { border-color: var(--water); box-shadow: 0 0 0 3px rgba(79,209,255,0.15); }
+    .form input::placeholder { color: var(--ink-faint); }
+    .form button {
+      height: 52px; padding: 0 24px; border-radius: 999px; border: none; cursor: pointer; font: inherit; font-weight: 500; font-size: 0.92rem;
+      background: var(--ink); color: var(--bg); transition: transform .15s, background .2s;
     }
-    .strip__item::after { content: '·'; margin-left: 28px; }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    /* ——— Problem ——— */
-    .problem__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .problem__heading {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 1.5rem;
-    }
-    .problem__heading em { font-style: italic; color: var(--accent); }
-    .problem__body { font-size: 0.97rem; line-height: 1.75; color: var(--muted); }
-    .problem__body p + p { margin-top: 1rem; }
-
-    .callouts { display: flex; flex-direction: column; gap: 16px; }
-    .callout {
-      padding: 18px 22px;
-      border-radius: var(--radius);
-      border-left: 3px solid;
-    }
-    .callout--bad { background: #fff4f4; border-color: #e34040; }
-    .callout--good { background: rgba(200,184,154,0.1); border-color: var(--gold); }
-    .callout__title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-    }
-    .callout--bad .callout__title { color: #c03030; }
-    .callout--good .callout__title { color: #8a7058; }
-    .callout__body { font-size: 0.86rem; line-height: 1.6; color: var(--muted); }
-
-    /* ——— Features ——— */
-    .section--features { background: var(--bg-alt); }
-    .features__grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    .feature-card {
-      background: var(--bg);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      border: 1px solid var(--border);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .feature-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
-    .feature-card__icon {
-      font-size: 1.5rem;
-      width: 52px; height: 52px;
-      border-radius: 13px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .icon--blue { background: rgba(0,113,227,0.09); }
-    .icon--gold { background: rgba(200,184,154,0.14); }
-    .icon--green { background: rgba(52,199,89,0.09); }
-    .icon--purple { background: rgba(175,82,222,0.09); }
-
-    .feature-card__tag {
-      display: inline-block;
-      font-size: 0.64rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      padding: 2px 7px;
-      border-radius: 4px;
-      margin-bottom: 8px;
-      color: var(--accent);
-      background: rgba(0,113,227,0.08);
-    }
-    .feature-card__tag--gold { color: #8a7058; background: rgba(200,184,154,0.14); }
-    .feature-card__title { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 10px; letter-spacing: -0.02em; }
-    .feature-card__body { font-size: 0.88rem; line-height: 1.68; color: var(--muted); }
-
-    /* ——— Compare ——— */
-    .section--compare { background: var(--navy); }
-    .section--compare .section__title { color: #fff; }
-    .section--compare .section__sub { color: rgba(255,255,255,0.45); }
-    .compare__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .compare-card { border-radius: var(--radius-lg); padding: 32px; border: 1px solid; }
-    .compare-card--them { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); }
-    .compare-card--us { background: rgba(200,184,154,0.06); border-color: rgba(200,184,154,0.18); }
-
-    .compare-card__label {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    .compare-card--them .compare-card__label { color: rgba(255,255,255,0.28); }
-    .compare-card--us .compare-card__label { color: var(--gold); }
-    .compare-card__label-dot { width: 6px; height: 6px; border-radius: 50%; }
-    .compare-card--them .compare-card__label-dot { background: rgba(255,255,255,0.2); }
-    .compare-card--us .compare-card__label-dot { background: var(--gold); box-shadow: 0 0 8px rgba(200,184,154,0.4); }
-
-    .compare-card__name { font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 24px; letter-spacing: -0.02em; }
-
-    .compare-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
-    .compare-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.86rem; line-height: 1.5; }
-    .compare-card--them .compare-list li { color: rgba(255,255,255,0.4); }
-    .compare-card--us .compare-list li { color: rgba(255,255,255,0.75); }
-    .cli { flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 800; margin-top: 1px; }
-    .compare-card--them .cli { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.25); }
-    .compare-card--us .cli { background: rgba(52,199,89,0.14); color: var(--green); }
-
-    .compare-card__price {
-      margin-top: 26px;
-      padding-top: 18px;
-      border-top: 1px solid;
-    }
-    .compare-card--them .compare-card__price { border-color: rgba(255,255,255,0.07); }
-    .compare-card--us .compare-card__price { border-color: rgba(200,184,154,0.18); }
-    .compare-card__price-label {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .compare-card--them .compare-card__price-label { color: rgba(255,255,255,0.28); }
-    .compare-card--us .compare-card__price-label { color: rgba(200,184,154,0.55); }
-    .compare-card__price-num { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
-    .compare-card--them .compare-card__price-num { color: rgba(255,255,255,0.4); }
-    .compare-card--us .compare-card__price-num { color: #fff; }
-    .compare-card__price-note { font-size: 0.75rem; margin-top: 4px; }
-    .compare-card--them .compare-card__price-note { color: rgba(255,255,255,0.25); }
-    .compare-card--us .compare-card__price-note { color: rgba(200,184,154,0.5); }
-
-    /* ——— Specs ——— */
-    .specs__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .spec-card { border: 1.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
-    .spec-card--featured { border-color: var(--accent); }
-    .spec-card__header { padding: 24px 28px; background: var(--bg-alt); border-bottom: 1px solid var(--border); }
-    .spec-card--featured .spec-card__header { background: var(--accent); border-color: transparent; }
-    .spec-card__sku { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
-    .spec-card--featured .spec-card__sku { color: rgba(255,255,255,0.55); }
-    .spec-card__name { font-size: 1.2rem; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
-    .spec-card--featured .spec-card__name { color: #fff; }
-    .spec-card__tagline { font-size: 0.8rem; color: var(--muted); margin-top: 3px; }
-    .spec-card--featured .spec-card__tagline { color: rgba(255,255,255,0.6); }
-    .spec-card__body { padding: 0 28px; }
-    .spec-row { display: flex; justify-content: space-between; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--border); gap: 16px; }
-    .spec-row:last-child { border-bottom: none; }
-    .spec-row__label { font-size: 0.8rem; color: var(--muted); font-weight: 500; flex-shrink: 0; }
-    .spec-row__value { font-size: 0.85rem; color: var(--text); font-weight: 600; text-align: right; }
-    .spec-card__footer { padding: 18px 28px; background: var(--bg-alt); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .spec-card__price { font-size: 1.5rem; font-weight: 700; color: var(--text); letter-spacing: -0.03em; }
-    .spec-card__price-note { font-size: 0.72rem; color: var(--muted); }
-
-    /* ——— Founder ——— */
-    .section--founder { background: var(--bg-alt); }
-    .founder__inner { max-width: 680px; margin: 0 auto; text-align: center; }
-    .founder__quote {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.2rem, 2.4vw, 1.6rem);
-      font-weight: 400;
-      font-style: italic;
-      line-height: 1.65;
-      color: var(--text);
-      margin-bottom: 2rem;
-    }
-    .founder__quote::before { content: '\201C'; color: var(--gold); }
-    .founder__quote::after { content: '\201D'; color: var(--gold); }
-    .founder__attr { display: flex; align-items: center; gap: 12px; justify-content: center; }
-    .founder__avatar {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold) 0%, #8a6a3a 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.82rem; font-weight: 700;
-      color: var(--navy-deep);
-      flex-shrink: 0;
-    }
-    .founder__name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
-    .founder__role { font-size: 0.78rem; color: var(--muted); }
-
-    /* ——— CTA ——— */
-    .section--cta { background: var(--navy-deep); padding: 96px 0; }
-    .cta__inner { max-width: 520px; margin: 0 auto; text-align: center; }
-    .cta__title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-    .cta__sub { font-size: 0.94rem; line-height: 1.65; color: rgba(255,255,255,0.45); margin-bottom: 2.5rem; }
-    .cta__form { display: flex; gap: 8px; }
-    .cta__input {
-      flex: 1;
-      padding: 12px 18px;
-      border-radius: 24px;
-      border: 1.5px solid rgba(255,255,255,0.13);
-      background: rgba(255,255,255,0.05);
-      color: #fff;
-      font-size: 0.9rem;
-      font-family: inherit;
-      outline: none;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .cta__input::placeholder { color: rgba(255,255,255,0.28); }
-    .cta__input:focus { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.08); }
-    .cta__submit {
-      flex-shrink: 0;
-      padding: 12px 20px;
-      border-radius: 24px;
-      background: #2d9e5f;
-      color: #fff;
-      font-size: 0.88rem;
-      font-weight: 700;
-      font-family: inherit;
-      border: none;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.2s;
-      white-space: nowrap;
-    }
-    .cta__submit:hover { opacity: 0.9; transform: translateY(-1px); }
-    .cta__note { font-size: 0.72rem; color: rgba(255,255,255,0.22); margin-top: 12px; }
-    .cta__success {
-      display: none;
-      background: rgba(52,199,89,0.08);
-      border: 1px solid rgba(52,199,89,0.18);
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      font-size: 0.88rem;
-      color: var(--green);
-    }
-
-    .timeline {
-      display: flex;
-      justify-content: center;
-      margin-top: 52px;
-      position: relative;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      top: 9px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 70%;
-      height: 1px;
-      background: rgba(255,255,255,0.08);
-    }
-    .timeline__step { flex: 1; max-width: 110px; display: flex; flex-direction: column; align-items: center; }
-    .timeline__dot {
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.07);
-      border: 2px solid rgba(255,255,255,0.12);
-      margin-bottom: 10px;
-      position: relative;
-      z-index: 1;
-    }
-    .timeline__dot--done { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 10px rgba(200,184,154,0.35); }
-    .timeline__label { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.28); text-align: center; line-height: 1.4; }
-    .timeline__label--done { color: var(--gold); }
+    .form button:hover { background: #fff; transform: translateY(-1px); }
+    .form button:disabled { opacity: .6; cursor: default; transform: none; }
+    .success { display: none; margin: 0 auto; max-width: 460px; padding: 16px 20px; border-radius: 14px; background: rgba(79,209,255,0.08); border: 1px solid rgba(79,209,255,0.3); color: var(--ink); font-size: 0.95rem; }
+    .fine { margin-top: 18px; font-size: 0.78rem; color: var(--ink-faint); }
 
     /* ——— Footer ——— */
-    .footer { background: #030810; padding: 52px 24px 32px; }
-    .footer__inner { max-width: var(--max-w); margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 48px; flex-wrap: wrap; }
-    .footer__brand { max-width: 260px; }
-    .footer__logo { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; }
-    .footer__mark { height: 36px; width: auto; opacity: 0.88; }
-    .footer__logo-name { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.6); }
-    .footer__desc { font-size: 0.78rem; line-height: 1.65; color: rgba(255,255,255,0.25); }
-    .footer__col-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.18); margin-bottom: 14px; }
-    .footer__links { display: flex; flex-direction: column; gap: 9px; }
-    .footer__link { font-size: 0.8rem; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
-    .footer__link:hover { color: rgba(255,255,255,0.65); }
-    .footer__bottom { max-width: var(--max-w); margin: 36px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-    .footer__copy { font-size: 0.72rem; color: rgba(255,255,255,0.18); }
-    .footer__legal { display: flex; gap: 18px; }
-    .footer__legal a { font-size: 0.72rem; color: rgba(255,255,255,0.18); text-decoration: none; }
+    .foot { padding: 40px 0 44px; border-top: 1px solid var(--line); font-size: 0.78rem; color: var(--ink-faint); }
+    .foot .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; justify-content: space-between; }
+    .foot a { text-decoration: none; }
+    .foot a:hover { color: var(--ink); }
 
-    /* ——— What it is ——— */
-    .section--whatitis { background: var(--navy); padding: 72px 0; }
-    .whatitis__inner { max-width: 760px; margin: 0 auto; text-align: center; }
-    .whatitis__desc {
-      font-size: clamp(1.1rem, 2.2vw, 1.35rem);
-      font-weight: 400;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.82);
-      margin-bottom: 1.75rem;
+    @media (max-width: 760px) {
+      .story { padding: 84px 0; }
+      .story h2 br, .capture h2 br { display: none; }
+      .story__grid { grid-template-columns: 1fr; gap: 36px; }
+      .story__grid--flip .story__art { order: 0; }
+      .story__art svg { max-width: 260px; }
+      .principles { grid-template-columns: 1fr; }
+      .form { flex-direction: column; }
+      .steps { flex-wrap: wrap; row-gap: 26px; }
+      .step { flex: 0 0 50%; }
+      .step:nth-child(2)::after { display: none; }
     }
-    .whatitis__desc::before { content: '\201C'; color: var(--gold); }
-    .whatitis__desc::after { content: '\201D'; color: var(--gold); }
-    .whatitis__expand { font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.45); max-width: 640px; margin: 0 auto; }
-
-    /* ——— Components ——— */
-    /* ——— Use case ——— */
-    .section--usecase { background: var(--navy); color: #fff; }
-    .section--usecase .section__title { color: #fff; }
-    .section--usecase .section__sub { color: rgba(255,255,255,0.55); }
-    .usecase__card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 40px; display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; }
-    .usecase__boat-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
-    .usecase__specs { display: flex; flex-direction: column; gap: 14px; }
-    .usecase__spec { display: flex; flex-direction: column; gap: 3px; }
-    .usecase__spec-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.06em; }
-    .usecase__spec-val { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.4; }
-    .usecase__qa { display: flex; flex-direction: column; gap: 20px; }
-    .usecase__q { font-size: 0.95rem; font-weight: 700; color: var(--gold); }
-    .usecase__a { font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.7); margin-top: -12px; }
-    @media (max-width: 768px) { .usecase__card { grid-template-columns: 1fr; gap: 32px; padding: 24px; } }
-
-    .section--components { background: var(--bg-alt); }
-    .components__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-    .comp-card { border-radius: var(--radius); overflow: hidden; background: var(--bg); border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s; }
-    .comp-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
-    .comp-card__img { width: 100%; height: 150px; object-fit: cover; display: block; background: var(--bg-alt); }
-    .comp-card__body { padding: 12px 14px 14px; }
-    .comp-card__name { font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 3px; letter-spacing: -0.01em; }
-    .comp-card__spec { font-size: 0.7rem; color: var(--muted); line-height: 1.4; }
-    .components__note { font-size: 0.72rem; color: var(--muted); text-align: center; font-style: italic; }
-
-    /* ——— Name ——— */
-    .section--name { background: var(--bg); }
-    .name__inner { max-width: 680px; margin: 0 auto; }
-    .name__h {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-    }
-    .name__h span { color: var(--gold); font-style: italic; }
-    .name__body { font-size: 1rem; line-height: 1.8; color: var(--muted); }
-    .name__body p + p { margin-top: 1.1rem; }
-    .name__greek { font-size: 1.6rem; font-style: italic; color: var(--gold); font-family: Georgia, serif; display: block; margin-bottom: 0.5rem; }
-
-    /* ——— Responsive ——— */
-    @media (max-width: 768px) {
-      .section { padding: 64px 0; }
-      .problem__grid, .features__grid, .compare__grid, .specs__grid { grid-template-columns: 1fr; gap: 24px; }
-      .components__grid { grid-template-columns: repeat(2, 1fr); }
-      .hero__stats { gap: 24px; }
-      .hero__stat-num { font-size: 1.5rem; }
-      .cta__form { flex-direction: column; }
-      .footer__inner { flex-direction: column; gap: 32px; }
-      .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
-      .timeline::before { width: 80%; }
-    }
-
-    /* ——— Use case tabs ——— */
-    .usecase__tabs { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
-    .usecase__tab { flex: 1; min-width: 140px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 16px 14px; cursor: pointer; text-align: left; transition: background 0.18s, border-color 0.18s; color: rgba(255,255,255,0.6); }
-    .usecase__tab:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
-    .usecase__tab.active { background: rgba(200,184,154,0.13); border-color: var(--gold); color: #fff; }
-    .usecase__tab-icon { font-size: 1.3rem; display: block; margin-bottom: 6px; }
-    .usecase__tab-title { font-size: 0.88rem; font-weight: 700; display: block; line-height: 1.2; }
-    .usecase__tab-sub { font-size: 0.72rem; color: rgba(255,255,255,0.35); display: block; margin-top: 3px; }
-    .usecase__tab.active .usecase__tab-sub { color: rgba(200,184,154,0.65); }
-    .usecase__panel { display: none; }
-    .usecase__panel.active { display: block; }
-    .usecase__loads { margin-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px; }
-    .usecase__loads-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 12px; }
-    .usecase__load { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.8rem; }
-    .usecase__load:last-child { border-bottom: none; }
-    .usecase__load-label { color: rgba(255,255,255,0.45); }
-    .usecase__load-val { color: rgba(255,255,255,0.8); font-variant-numeric: tabular-nums; }
-    .usecase__load--total .usecase__load-label,
-    .usecase__load--total .usecase__load-val { font-weight: 700; color: #fff; padding-top: 4px; }
-    .usecase__load--solar .usecase__load-label,
-    .usecase__load--solar .usecase__load-val { color: #4ade80; }
-    .usecase__load--deficit .usecase__load-label,
-    .usecase__load--deficit .usecase__load-val { color: #f87171; }
-    .usecase__load--surplus .usecase__load-label,
-    .usecase__load--surplus .usecase__load-val { color: #4ade80; }
-    .usecase__verdict { background: rgba(200,184,154,0.09); border: 1px solid rgba(200,184,154,0.2); border-radius: 10px; padding: 18px 20px; margin-top: 20px; }
-    .usecase__verdict-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; }
-    .usecase__verdict-sku { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
-    .usecase__verdict-text { font-size: 0.82rem; line-height: 1.6; color: rgba(255,255,255,0.65); }
   </style>
 </head>
 <body>
 
-<!-- Nav -->
 <nav class="nav">
-  <a href="#" class="nav__brand">
-    <img src="logo-white.png" class="nav__mark" alt="Oroboro" aria-hidden="true">
-    <span class="nav__name">Oroboro <span>Watermaker</span></span>
+  <a class="nav__brand" href="#top">
+    <img class="nav__mark" src="logo-white.png" alt="">
+    <span class="nav__name">Oroboro</span>
   </a>
-  <a href="#register" class="nav__cta">Register interest</a>
+  <a class="nav__cta" href="#notify">Be first to know</a>
 </nav>
 
-<!-- Hero -->
-<section class="hero">
-  <svg class="hero__waves" viewBox="0 0 1440 220" preserveAspectRatio="none">
-    <path d="M0,110 C360,170 720,50 1080,110 C1260,140 1380,85 1440,110 L1440,220 L0,220 Z" fill="rgba(200,184,154,0.35)"/>
-    <path d="M0,150 C240,110 480,170 720,140 C960,110 1200,160 1440,130 L1440,220 L0,220 Z" fill="rgba(200,184,154,0.15)"/>
+<!-- ——— HERO ——— -->
+<header class="hero" id="top">
+  <svg class="stars" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="#fff">
+      <circle cx="120" cy="140" r="1"/><circle cx="310" cy="80" r=".8"/><circle cx="520" cy="210" r="1.1"/><circle cx="760" cy="60" r=".7"/>
+      <circle cx="980" cy="170" r="1"/><circle cx="1210" cy="90" r=".9"/><circle cx="1380" cy="230" r="1.2"/><circle cx="210" cy="330" r=".7"/>
+      <circle cx="1120" cy="320" r=".8"/><circle cx="640" cy="120" r=".6"/><circle cx="860" cy="290" r=".7"/><circle cx="1300" cy="400" r=".6"/>
+      <circle cx="60" cy="480" r=".8"/><circle cx="420" cy="30" r=".9"/><circle cx="1440" cy="40" r=".8"/><circle cx="700" cy="380" r=".5"/>
+    </g>
   </svg>
 
-  <div class="hero__content">
-    <div class="hero__badge">
-      <span class="hero__badge-dot"></span>
-      <span class="hero__badge-text">Now in development · Aegean &amp; Mediterranean · Summer 2027</span>
+  <div class="hero__inner">
+    <div class="eyebrow eyebrow--gold">Something is coming · 2027</div>
+    <h1>Water, from <em>nowhere.</em></h1>
+    <p class="hero__sub">A sealed twelve-volt watermaker that looks after itself. No inverter. No generator. No valves to turn. No new holes in your boat.</p>
+
+    <!-- ——— The object ——— -->
+    <div class="pod-wrap">
+      <svg class="pod" viewBox="0 0 760 420" role="img" aria-label="A sealed matte-black composite capsule with a single glowing ring of light, floating above calm water">
+        <defs>
+          <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2a3240"/>
+            <stop offset=".35" stop-color="#151b26"/>
+            <stop offset=".7" stop-color="#0c1018"/>
+            <stop offset="1" stop-color="#1b212c"/>
+          </linearGradient>
+          <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+            <stop offset=".45" stop-color="#fff" stop-opacity=".16"/>
+            <stop offset=".5" stop-color="#fff" stop-opacity=".22"/>
+            <stop offset=".55" stop-color="#fff" stop-opacity=".16"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="cap" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#3a4453"/>
+            <stop offset="1" stop-color="#0e131b"/>
+          </linearGradient>
+          <linearGradient id="capR" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#3a4453"/>
+            <stop offset="1" stop-color="#0e131b"/>
+          </linearGradient>
+          <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+            <stop offset=".55" stop-color="#4FD1FF" stop-opacity="0"/>
+            <stop offset=".75" stop-color="#4FD1FF" stop-opacity=".45"/>
+            <stop offset="1" stop-color="#4FD1FF" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="floor" cx="50%" cy="50%" r="50%">
+            <stop offset="0" stop-color="#0a7fb5" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#0a7fb5" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="dropG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#bfefff"/>
+            <stop offset="1" stop-color="#4FD1FF"/>
+          </linearGradient>
+          <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+          <filter id="blur3"><feGaussianBlur stdDeviation="3"/></filter>
+          <filter id="soft"><feGaussianBlur stdDeviation="1.2"/></filter>
+          <clipPath id="bodyClip"><rect x="130" y="120" width="500" height="150" rx="75"/></clipPath>
+        </defs>
+
+        <!-- water floor light + ripples -->
+        <ellipse cx="380" cy="372" rx="300" ry="26" fill="url(#floor)"/>
+        <g stroke="#4FD1FF" fill="none" opacity=".8">
+          <ellipse class="ripple" cx="560" cy="372" rx="40" ry="7" stroke-width="1"/>
+          <ellipse class="ripple ripple--2" cx="560" cy="372" rx="26" ry="4.5" stroke-width=".8"/>
+        </g>
+        <line x1="40" y1="372" x2="720" y2="372" stroke="rgba(79,209,255,0.28)" stroke-width="1"/>
+
+        <!-- shadow under body -->
+        <ellipse cx="380" cy="300" rx="230" ry="16" fill="#000" opacity=".55" filter="url(#blur8)"/>
+
+        <!-- capsule body -->
+        <rect x="130" y="120" width="500" height="150" rx="75" fill="url(#body)"/>
+        <rect x="130" y="120" width="500" height="150" rx="75" fill="url(#sheen)" clip-path="url(#bodyClip)"/>
+        <!-- specular highlight -->
+        <rect x="200" y="131" width="360" height="22" rx="11" fill="#fff" opacity=".06" filter="url(#soft)"/>
+        <!-- end caps (machined) -->
+        <path d="M205 120 h-20 a75 75 0 0 0 0 150 h20 z" fill="url(#cap)"/>
+        <path d="M555 120 h20 a75 75 0 0 1 0 150 h-20 z" fill="url(#capR)"/>
+        <line x1="205" y1="122" x2="205" y2="268" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <line x1="555" y1="122" x2="555" y2="268" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <!-- subtle seam -->
+        <line x1="130" y1="195" x2="630" y2="195" stroke="rgba(0,0,0,0.35)" stroke-width="1"/>
+
+        <!-- status ring -->
+        <g class="ring-glow">
+          <rect x="372" y="106" width="16" height="178" rx="8" fill="url(#ringGlow)" filter="url(#blur3)"/>
+        </g>
+        <rect x="378" y="120" width="4" height="150" rx="2" fill="#4FD1FF"/>
+        <rect x="378" y="120" width="4" height="150" rx="2" fill="#4FD1FF" opacity=".9" filter="url(#blur3)" class="ring-glow"/>
+        <!-- single touch point -->
+        <circle cx="300" cy="195" r="12" fill="#0b0f16" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <circle cx="300" cy="195" r="3" fill="#4FD1FF" class="ring-glow"/>
+        <!-- wordmark etched -->
+        <text x="470" y="200" font-family="Inter, sans-serif" font-size="11" letter-spacing="3.4" fill="rgba(255,255,255,0.32)">OROBORO</text>
+
+        <!-- ports: three flush connectors on the underside -->
+        <g fill="#1e2530" stroke="rgba(255,255,255,0.14)" stroke-width="1">
+          <rect x="236" y="266" width="26" height="12" rx="4"/>
+          <rect x="367" y="266" width="26" height="12" rx="4"/>
+          <rect x="548" y="266" width="26" height="12" rx="4"/>
+        </g>
+
+        <!-- the drop -->
+        <g class="drop">
+          <path d="M561 286 c-7 10 -8 14 -8 18 a8 8 0 0 0 16 0 c0 -4 -1 -8 -8 -18 z" fill="url(#dropG)"/>
+          <circle cx="558" cy="302" r="1.6" fill="#fff" opacity=".8"/>
+        </g>
+      </svg>
     </div>
 
-    <h1>Coming soon: finally a watermaker<br><em>you can actually afford.</em></h1>
+    <div class="hero__hint">Scroll<span></span></div>
+  </div>
+</header>
 
-    <p class="hero__sub">An affordable marine RO watermaker built by two sailors with 30,000 nautical miles across 4 continents and 2 oceans. Make your own fresh water — on anchor, at sea, wherever you are.</p>
-
-    <div class="hero__actions">
-      <a href="#register" class="btn btn--primary">Register interest →</a>
-      <a href="#how" class="btn btn--outline">Read the story</a>
-    </div>
-
-    <div class="hero__stats">
-      <div class="hero__stat">
-        <span class="hero__stat-num">From €2,990</span>
-        <span class="hero__stat-label">Estimated price</span>
-      </div>
-      <div class="hero__stat">
-        <span class="hero__stat-num">70 L/h</span>
-        <span class="hero__stat-label">Peak output</span>
-      </div>
-      <div class="hero__stat">
-        <span class="hero__stat-num">30,000 NM</span>
-        <span class="hero__stat-label">Builder's sea miles</span>
-      </div>
-      <div class="hero__stat">
-        <span class="hero__stat-num">Boats 30ft+</span>
-        <span class="hero__stat-label">Two models available</span>
-      </div>
+<!-- ——— STORY 1: the problem ——— -->
+<section class="story">
+  <div class="wrap">
+    <div class="quote">
+      <div class="eyebrow">The quay</div>
+      <h2>You know the queue on the quay<br>when the meltemi blows.</h2>
+      <p>Eight boats, one hose, a man with a clipboard. You pay for water that tastes of the pipe it came through, and you plan your week around it. Meanwhile you are floating on the largest reservoir on Earth.</p>
+      <p><strong>Watermakers were supposed to fix this.</strong> Instead they arrived with a generator, an inverter the size of a suitcase, a panel of gauges and valves, and a maintenance schedule only an engineer could love. Most boats in the Mediterranean still don't have one. We think we know why.</p>
     </div>
   </div>
 </section>
 
-<!-- Marquee strip -->
-<div class="strip" aria-hidden="true">
-  <div class="strip__track">
-    <span class="strip__item">Italian AR Pump</span>
-    <span class="strip__item">Built for the Aegean</span>
-    <span class="strip__item">Seawater RO Membrane</span>
-    <span class="strip__item">No Marina Required</span>
-    <span class="strip__item">SS316L Throughout</span>
-    <span class="strip__item">Solar-Powered Mode</span>
-    <span class="strip__item">No Proprietary Parts</span>
-    <span class="strip__item">Made in Athens</span>
-    <span class="strip__item">Italian AR Pump</span>
-    <span class="strip__item">Built for the Aegean</span>
-    <span class="strip__item">Seawater RO Membrane</span>
-    <span class="strip__item">No Marina Required</span>
-    <span class="strip__item">SS316L Throughout</span>
-    <span class="strip__item">Solar-Powered Mode</span>
-    <span class="strip__item">No Proprietary Parts</span>
-    <span class="strip__item">Made in Athens</span>
-  </div>
-</div>
-
-<!-- What it is -->
-<section class="section--whatitis">
-  <div class="container">
-    <div class="whatitis__inner">
-      <span class="eyebrow">What it is</span>
-      <p class="whatitis__desc">A 220V AC marine reverse osmosis watermaker assembled from generic industrial and semi-industrial components, targeting a significant cost reduction versus branded units while maintaining performance and reliability.</p>
-      <p class="whatitis__expand">That is the honest one-sentence description. A seawater pump, a membrane, a pressure vessel, some valves, and a motor controller — all sourced direct from the factories that make them, with no brand markup in between. Assembled, tested, and supported by two sailors who have done 30,000 miles across 4 continents and 2 oceans and know exactly what needs to work when you are far from a marina.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Problem -->
-<section class="section" id="how">
-  <div class="container">
-    <div class="problem__grid">
+<!-- ——— STORY 2: twelve volts ——— -->
+<section class="story story--tint">
+  <div class="wrap">
+    <div class="story__grid">
       <div>
-        <span class="eyebrow eyebrow--blue">You know the scene</span>
-        <h2 class="problem__heading">You've watched what happens on Greek town quays<br><em>when the meltemi blows.</em></h2>
-        <div class="problem__body">
-          <p>35 knots over the beam. Boats stern-to, ropes crossing everywhere, bumpers flying. Someone dragging. Someone shouting. And you're there — in the middle of all of it — because you need to fill water tanks.</p>
-          <p>And the water you get? Half the time it tastes of salt. Pipes that feed straight off a municipal cistern, in a port that's right on the sea. You fill up, pay for a berth, navigate the chaos — and you're still not sure what's actually going in your tanks.</p>
-          <p>Your own watermaker changes everything. Drop anchor in a bay. Make 60 litres in an hour. Move on. Stay out as long as you want.</p>
-        </div>
+        <div class="eyebrow">Twelve volts</div>
+        <h2>Designed around the power <em>you already have.</em></h2>
+        <p>Every boat has a battery bank. Very few have a three-kilowatt inverter or a generator that someone wants to run at anchor. So we started there, and we refused to move.</p>
+        <p>The next Oroboro runs on twelve volts, straight from the bank, at a draw you can sustain on solar. <strong>Not a smaller version of a big machine. A different machine.</strong></p>
       </div>
-
-      <div class="callouts">
-        <div class="callout callout--bad">
-          <div class="callout__title">The price is wrong</div>
-          <div class="callout__body">Marine watermakers (reverse osmosis systems for boats) are sold at a massive premium by established OEM brands. A typical 60–100 L/h unit retails for €8,000–12,000+, despite being built from industrial components that can be sourced at a fraction of the cost.<br><br>We assemble a performance-equivalent watermaker from direct-sourced industrial components: Italian HP pump bought factory-direct, a custom membrane vessel, commodity RO membrane and pre-filters, and commercial SS316L HP valve components.</div>
-        </div>
-        <div class="callout callout--bad">
-          <div class="callout__title">Built for big yachts and deep pockets. Not anymore.</div>
-          <div class="callout__body">Most marine watermakers are designed for owners with a yacht manager and a budget to match. And when something breaks in Paros or Leros? Proprietary parts, from one supplier, shipped from the US — with the exchange rate, the import duties, and the waiting time on top.</div>
-        </div>
-        <div class="callout callout--good">
-          <div class="callout__title">Oroboro is built differently</div>
-          <div class="callout__body">Assembled in Greece from industrial components. No import duties, no currency conversion, no shipping from overseas. When you call for support, we answer — because it is us. Standard industrial parts stocked from Athens to Palma — anyone can service it.</div>
-        </div>
+      <div class="story__art">
+        <svg viewBox="0 0 320 320" aria-hidden="true">
+          <defs>
+            <radialGradient id="g12" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4FD1FF" stop-opacity=".35"/><stop offset="1" stop-color="#4FD1FF" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="160" cy="160" r="150" fill="url(#g12)"/>
+          <circle cx="160" cy="160" r="104" fill="none" stroke="rgba(255,255,255,0.12)"/>
+          <circle cx="160" cy="160" r="104" fill="none" stroke="#4FD1FF" stroke-width="2" stroke-dasharray="90 564" stroke-linecap="round" transform="rotate(-90 160 160)"/>
+          <text x="160" y="150" text-anchor="middle" font-family="Playfair Display, serif" font-size="74" fill="#EAF0F7">12</text>
+          <text x="160" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" letter-spacing="4" fill="rgba(234,240,247,0.5)">VOLTS DC</text>
+          <path d="M150 230 l10 -22 l-6 0 l8 -18 l-10 22 l6 0 z" fill="#c8b89a"/>
+        </svg>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Features -->
-<section class="section section--features" id="features">
-  <div class="container">
-    <div class="section__header">
-      <span class="eyebrow">Why Oroboro</span>
-      <h2 class="section__title">Built for normal sailors, not for the super rich!</h2>
-      <p class="section__sub">Every component was chosen by someone who has anchored in the same bays you sail to. Low cost. Standard parts. Designed to run on the power you already have aboard.</p>
-    </div>
-
-    <div class="features__grid">
-      <div class="feature-card">
-        <div class="feature-card__icon icon--blue">⚡</div>
-        <div class="feature-card__tag">For European boats</div>
-        <h3 class="feature-card__title">Built in Europe. Priced in euros. Supported in person.</h3>
-        <p class="feature-card__body">Assembled in Athens from European-sourced components — no customs clearance, no waiting for a US shipment, no dollar invoice with the exchange rate baked in. Our price is in euros, our warranty is EU-valid, and when you call for support you reach the same two people who built your system. In the Mediterranean.</p>
+<!-- ——— STORY 3: black box ——— -->
+<section class="story">
+  <div class="wrap">
+    <div class="story__grid story__grid--flip">
+      <div>
+        <div class="eyebrow">Closed system</div>
+        <h2>One button. <em>Nothing to learn.</em></h2>
+        <p>No pressure gauge to read. No needle valve to feather. No flush procedure to remember before you leave the boat for a month.</p>
+        <p>The machine knows when it last ran, rinses itself on schedule, and tells you one thing: <strong>the water is good, or it isn't.</strong> Everything else happens inside a sealed composite shell you will never need to open.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-card__icon icon--gold">🔩</div>
-        <div class="feature-card__tag feature-card__tag--gold">Italian engineering</div>
-        <h3 class="feature-card__title">Italian pump — zero oil changes</h3>
-        <p class="feature-card__body">An Italian-made ceramic triplex plunger pump. Water-lubricated ceramic plungers — no oil to change, no crankcase to service, nothing to forget. The same pump family used in professional RO systems worldwide. Built to outlast the boat.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-card__icon icon--green">☀️</div>
-        <div class="feature-card__tag">Aegean summer ready</div>
-        <h3 class="feature-card__title">Make water while the sun shines</h3>
-        <p class="feature-card__body">Dial the VFD down to 30–35Hz at anchor. The system draws ~700W — about 58A at 12V. Flexible panels at 400W nominal realistically yield 180–200W in working conditions: heat, flat mounting, and rigging shadow all cut into the headline figure. Even so, running midday with panels charging reduces your net battery draw to around 500W. One to two hours produces 35–70 litres — without the engine running.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-card__icon icon--purple">🌍</div>
-        <div class="feature-card__tag">Serviceable anywhere</div>
-        <h3 class="feature-card__title">Fix it in Paros. Or Leros. Or anywhere in the world.</h3>
-        <p class="feature-card__body">An Italian pump. SS316L valve and fittings. A seawater RO membrane. An industrial variable frequency drive. Every component is a standard catalogue part — stocked by distributors in Athens, Palma, Marseille, and beyond. Nothing that requires a call to one specific overseas supplier.</p>
-      </div>
-
-      <div class="feature-card" style="grid-column: 1 / -1;">
-        <div class="feature-card__icon icon--blue">🔧</div>
-        <div class="feature-card__tag">No black box</div>
-        <h3 class="feature-card__title">No electronics to fail. No mystery to debug.</h3>
-        <p class="feature-card__body">Most branded watermakers hide their logic inside a proprietary control unit — pressure sensors, solenoid valves, a motherboard, an LCD panel. A sealed box that nobody outside the factory can repair. When it fails at sea, you wait weeks for a part shipped from overseas. Ours has none of that. A pressure gauge tells you the system pressure. A needle valve controls it. A VFD dial sets the motor speed. That is the entire interface. Read the gauge, turn the valve, make water. If anything ever fails, you replace a standard industrial part available from any pump or electrical supplier — not a proprietary PCB on back-order from a US warehouse.</p>
+      <div class="story__art">
+        <svg viewBox="0 0 320 320" aria-hidden="true">
+          <rect x="60" y="100" width="200" height="120" rx="60" fill="#111722" stroke="rgba(255,255,255,0.12)"/>
+          <rect x="60" y="100" width="200" height="120" rx="60" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="8"/>
+          <circle cx="160" cy="160" r="22" fill="#0b0f16" stroke="rgba(255,255,255,0.2)"/>
+          <circle cx="160" cy="160" r="6" fill="#4FD1FF"/>
+          <circle cx="160" cy="160" r="30" fill="none" stroke="#4FD1FF" stroke-opacity=".35"/>
+          <circle cx="160" cy="160" r="44" fill="none" stroke="#4FD1FF" stroke-opacity=".15"/>
+          <text x="160" y="262" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" letter-spacing="3.5" fill="rgba(234,240,247,0.45)">SEALED · SELF-RINSING</text>
+        </svg>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Compare -->
-<section class="section section--compare">
-  <div class="container">
-    <div class="section__header">
-      <span class="eyebrow">How it stacks up</span>
-      <h2 class="section__title">What you get for the money</h2>
-      <p class="section__sub">Branded watermakers are built for the market that buys the most of them — and that is not you. Oroboro is designed for the Mediterranean, assembled in Europe, and supported by the people who built it.</p>
-    </div>
-
-    <div class="compare__grid">
-      <div class="compare-card compare-card--them">
-        <div class="compare-card__label">
-          <span class="compare-card__label-dot"></span>
-          Branded Watermakers
-        </div>
-        <div class="compare-card__name">The typical branded unit</div>
-        <ul class="compare-list">
-          <li><span class="cli">✕</span><span>Sold from overseas — import duties, currency risk, US-based support</span></li>
-          <li><span class="cli">✕</span><span>Fixed motor speed — no solar mode, no variable output</span></li>
-          <li><span class="cli">✕</span><span>Proprietary parts — specialist sourcing when something fails</span></li>
-          <li><span class="cli">✕</span><span>Oil-lubricated pump on some models — oil changes at sea</span></li>
-          <li><span class="cli">✕</span><span>You pay for the brand name, not just the components</span></li>
-        </ul>
-        <div class="compare-card__price">
-          <div class="compare-card__price-label">Typical price — comparable 60 L/h unit</div>
-          <div class="compare-card__price-num">From $15,675</div>
-          <div class="compare-card__price-note">US brand, dealer price — import duties, shipping &amp; currency conversion extra</div>
-        </div>
+<!-- ——— STORY 4: no new holes ——— -->
+<section class="story story--tint">
+  <div class="wrap">
+    <div class="story__grid">
+      <div>
+        <div class="eyebrow">Installation</div>
+        <h2>No haul-out. <em>No new holes.</em></h2>
+        <p>Your boat already has the openings a watermaker needs. The next Oroboro is designed to share them, so a weekend and a few hose clamps is the whole job.</p>
+        <p>Light enough to carry aboard in one hand. Compact enough to live in a locker you had forgotten about. <strong>If you can fit a cockpit cushion, you can fit this.</strong></p>
       </div>
-
-      <div class="compare-card compare-card--us">
-        <div class="compare-card__label">
-          <span class="compare-card__label-dot"></span>
-          Oroboro Watermaker
-        </div>
-        <div class="compare-card__name">ORB-2540 · ORB-2521</div>
-        <ul class="compare-list">
-          <li><span class="cli">✓</span><span>Assembled in Athens — EU warranty, no import costs, no currency risk</span></li>
-          <li><span class="cli">✓</span><span>Variable speed 30–60Hz — solar-only watermaking mode</span></li>
-          <li><span class="cli">✓</span><span>Standard industrial parts worldwide — HP valve, SS316L fittings, seawater membrane</span></li>
-          <li><span class="cli">✓</span><span>Italian ceramic plunger pump — zero oil, zero maintenance schedule</span></li>
-          <li><span class="cli">✓</span><span>Family business — call us and we pick up the phone</span></li>
-        </ul>
-        <div class="compare-card__price">
-          <div class="compare-card__price-label">Starting price</div>
-          <div class="compare-card__price-num">From €2,990</div>
-          <div class="compare-card__price-note">Estimated · subject to prototype validation</div>
-        </div>
+      <div class="story__art">
+        <svg viewBox="0 0 320 320" aria-hidden="true">
+          <path d="M20 200 Q160 140 300 200" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+          <path d="M20 200 Q160 260 300 200" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+          <path d="M0 230 Q80 218 160 230 T320 230" fill="none" stroke="#4FD1FF" stroke-opacity=".5"/>
+          <path d="M0 246 Q80 234 160 246 T320 246" fill="none" stroke="#4FD1FF" stroke-opacity=".25"/>
+          <rect x="112" y="150" width="96" height="30" rx="15" fill="#111722" stroke="rgba(255,255,255,0.14)"/>
+          <rect x="158" y="150" width="3" height="30" fill="#4FD1FF"/>
+          <line x1="130" y1="180" x2="110" y2="212" stroke="#c8b89a" stroke-width="2"/>
+          <line x1="190" y1="180" x2="210" y2="212" stroke="#c8b89a" stroke-width="2"/>
+          <circle cx="110" cy="214" r="4" fill="#c8b89a"/><circle cx="210" cy="214" r="4" fill="#c8b89a"/>
+          <text x="160" y="290" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" letter-spacing="3.5" fill="rgba(234,240,247,0.45)">USES EXISTING THROUGH-HULLS</text>
+        </svg>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Use case -->
-<section class="section section--usecase">
-  <div class="container">
-    <div class="section__header">
-      <span class="eyebrow">Real world</span>
-      <h2 class="section__title">Will it work on your boat?</h2>
-      <p class="section__sub">Four real Mediterranean setups. Honest power math — fridge included, realistic solar output, no wishful thinking. Pick the one closest to yours.</p>
+<!-- ——— STORY 5: space engineering ——— -->
+<section class="story">
+  <div class="wrap">
+    <div class="quote">
+      <div class="eyebrow">Engineering</div>
+      <h2>Built the way you build things<br>that <em>cannot be fixed in orbit.</em></h2>
+      <p>A spacecraft doesn't get a service call. So its designers obsess over three things: fewer parts, lighter materials, and systems that manage themselves. We gave this project to a young aerospace engineering team and asked them to think the same way about a machine that lives in a bilge.</p>
+      <p>Composite instead of steel. Sealed instead of serviceable. Automatic instead of adjustable. <strong>Fewer things that can go wrong, because there are fewer things.</strong></p>
     </div>
-
-    <!-- Boat selector tabs -->
-    <div class="usecase__tabs">
-      <button class="usecase__tab" data-tab="0">
-        <span class="usecase__tab-icon">&#9975;</span>
-        <span class="usecase__tab-title">Weekend couple</span>
-        <span class="usecase__tab-sub">35–37ft &middot; 200 Ah</span>
-      </button>
-      <button class="usecase__tab active" data-tab="1">
-        <span class="usecase__tab-icon">&#9875;</span>
-        <span class="usecase__tab-title">Med family</span>
-        <span class="usecase__tab-sub">40–45ft &middot; 400 Ah</span>
-      </button>
-      <button class="usecase__tab" data-tab="2">
-        <span class="usecase__tab-icon">&#127758;</span>
-        <span class="usecase__tab-title">Liveaboard</span>
-        <span class="usecase__tab-sub">45ft+ &middot; 600 Ah</span>
-      </button>
-      <button class="usecase__tab" data-tab="3">
-        <span class="usecase__tab-icon">&#9728;</span>
-        <span class="usecase__tab-title">Catamaran</span>
-        <span class="usecase__tab-sub">42ft+ &middot; High solar</span>
-      </button>
-    </div>
-
-    <!-- Panel 0: Weekend couple -->
-    <div class="usecase__panel" data-panel="0">
-      <div class="usecase__card">
-        <div class="usecase__boat">
-          <div class="usecase__boat-title">The boat</div>
-          <div class="usecase__specs">
-            <div class="usecase__spec"><span class="usecase__spec-label">Boat</span><span class="usecase__spec-val">35–37ft production monohull, 2005–2012</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Battery</span><span class="usecase__spec-val">200 Ah AGM @ 12V &mdash; 100 Ah usable</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Solar</span><span class="usecase__spec-val">160W flexible &rarr; ~75W realistic output</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Inverter</span><span class="usecase__spec-val">2,000W pure sine wave (minimum required)</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Crew</span><span class="usecase__spec-val">2 adults, 3–4 weeks summer, marina every 2–3 nights</span></div>
-          </div>
-          <div class="usecase__loads">
-            <div class="usecase__loads-title">Daily power budget</div>
-            <div class="usecase__load"><span class="usecase__load-label">Compressor fridge (40 L)</span><span class="usecase__load-val">~250 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Chartplotter + AIS + VHF</span><span class="usecase__load-val">~120 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">LED lights + anchor light</span><span class="usecase__load-val">~60 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Phones + tablet</span><span class="usecase__load-val">~60 Wh</span></div>
-            <div class="usecase__load usecase__load--total"><span class="usecase__load-label">Total daily</span><span class="usecase__load-val">~490 Wh</span></div>
-            <div class="usecase__load usecase__load--solar"><span class="usecase__load-label">Solar input (realistic)</span><span class="usecase__load-val">+375 Wh</span></div>
-            <div class="usecase__load usecase__load--deficit"><span class="usecase__load-label">Daily deficit</span><span class="usecase__load-val">&minus;115 Wh</span></div>
-          </div>
-          <div class="usecase__verdict">
-            <div class="usecase__verdict-label">Recommendation</div>
-            <div class="usecase__verdict-sku">ORB-2521 at 30 Hz</div>
-            <div class="usecase__verdict-text">Compact vessel fits tight lockers. 45 min run &rarr; ~26 L. Net battery draw: ~37 Ah. Run while motoring or right after engine stop.</div>
-          </div>
-        </div>
-        <div class="usecase__qa">
-          <div class="usecase__q">Why the compact ORB-2521 and not the full ORB-2540?</div>
-          <div class="usecase__a">Space, not output. The ORB-2521 uses a 21-inch pressure vessel — roughly half the length of the full model. On a 35–37ft boat the locker space is tight and every centimetre counts. Output is lower (~26 L per 45-minute run at 30Hz), but for two people being water-smart that is more than enough.</div>
-
-          <div class="usecase__q">Does the bank survive the run?</div>
-          <div class="usecase__a">With 100 Ah usable, one run draws ~37 Ah net (panel charges during the run). That leaves 63 Ah in reserve — well above the 50% limit if the bank was reasonably full. On a 35–37ft boat you motor more often than bigger boats anyway. Run the watermaker while the engine is running and it costs you nothing from the bank.</div>
-
-          <div class="usecase__q">What about the inverter?</div>
-          <div class="usecase__a">The VFD needs a pure sine wave inverter rated 2,000W minimum continuous. If you have a 1,000W or 1,500W unit — or a modified sine wave unit — replace it first. This is not optional. A 2,000W pure sine wave inverter costs €150–250 and is a worthwhile upgrade regardless of the watermaker.</div>
-
-          <div class="usecase__q">Is 26 litres enough for two people?</div>
-          <div class="usecase__a">13 litres per person per day is plenty for drinking, cooking, and quick rinses — especially on a boat where you are in the sea all day. Run it every other day and you have a comfortable buffer. At marinas, top up tanks for free and don&apos;t run it at all.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Panel 1: Med family -->
-    <div class="usecase__panel active" data-panel="1">
-      <div class="usecase__card">
-        <div class="usecase__boat">
-          <div class="usecase__boat-title">The boat</div>
-          <div class="usecase__specs">
-            <div class="usecase__spec"><span class="usecase__spec-label">Boat</span><span class="usecase__spec-val">40–45ft production monohull, 2010–2018</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Battery</span><span class="usecase__spec-val">400 Ah AGM @ 12V &mdash; 200 Ah usable</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Solar</span><span class="usecase__spec-val">300W rigid on arch &rarr; ~210W realistic output</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Inverter</span><span class="usecase__spec-val">2,500W pure sine wave</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Crew</span><span class="usecase__spec-val">2 adults + kids, 6–8 weeks summer, marina every 4–5 nights</span></div>
-          </div>
-          <div class="usecase__loads">
-            <div class="usecase__loads-title">Daily power budget</div>
-            <div class="usecase__load"><span class="usecase__load-label">Fridge + small freezer</span><span class="usecase__load-val">~500 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Autopilot</span><span class="usecase__load-val">~200 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Nav suite (chartplotter, AIS, VHF)</span><span class="usecase__load-val">~250 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Electric windlass</span><span class="usecase__load-val">~50 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Lights + devices (4 people)</span><span class="usecase__load-val">~250 Wh</span></div>
-            <div class="usecase__load usecase__load--total"><span class="usecase__load-label">Total daily</span><span class="usecase__load-val">~1,250 Wh</span></div>
-            <div class="usecase__load usecase__load--solar"><span class="usecase__load-label">Solar input (realistic)</span><span class="usecase__load-val">+1,050 Wh</span></div>
-            <div class="usecase__load usecase__load--deficit"><span class="usecase__load-label">Daily deficit</span><span class="usecase__load-val">&minus;200 Wh</span></div>
-          </div>
-          <div class="usecase__verdict">
-            <div class="usecase__verdict-label">Recommendation</div>
-            <div class="usecase__verdict-sku">ORB-2540 at 30 Hz</div>
-            <div class="usecase__verdict-text">1.5h midday run &rarr; ~52 L. Net battery draw: ~58 Ah, leaving 142 Ah in reserve. Engine top-up every 2–3 anchor nights. Very manageable.</div>
-          </div>
-        </div>
-        <div class="usecase__qa">
-          <div class="usecase__q">What does one watermaker run actually cost?</div>
-          <div class="usecase__a">At 30Hz the system draws ~700W through the inverter. Running 1.5 hours to produce ~52 litres costs ~1,050 Wh total. With 210W of solar charging simultaneously (~315 Wh recovered during the run), the net battery draw is ~735 Wh — about 61 Ah at 12V. That leaves 139 Ah in reserve. Comfortable, well above the 50% DoD limit.</div>
-
-          <div class="usecase__q">Can 300W rigid solar cover it — with the fridge running all day?</div>
-          <div class="usecase__a">Not entirely. The daily budget without the watermaker is ~1,250 Wh. Solar covers ~1,050 Wh, leaving a ~200 Wh deficit per day. Add the watermaker run and that deficit grows. In practice: one engine charging session every 2–3 anchor nights (you are probably motoring between islands anyway) balances the bank. It is very cheap water — not free water.</div>
-
-          <div class="usecase__q">What is the trick with the fridge?</div>
-          <div class="usecase__a">Pre-cool the fridge for an hour before the run, then switch the compressor off for the 90-minute watermaking window. The thermal mass of a well-insulated fridge holds temperature easily for that long. Net battery draw drops by 50–80W, the inverter is under less stress, and you recover 75–120 Wh over the run. It is the single most effective power management move on a hot Med day.</div>
-
-          <div class="usecase__q">What if they switch to rigid solar?</div>
-          <div class="usecase__a">Rigid panels at optimal angle run at 65–75% of nominal vs. ~50% for flexible flat-mounted. Upgrading to 400W rigid (same cost as 600W flexible) yields ~280W realistic — enough to nearly offset the watermaker run. Add a wind generator and the bank could stay positive without any engine charging on good days.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Panel 2: Liveaboard -->
-    <div class="usecase__panel" data-panel="2">
-      <div class="usecase__card">
-        <div class="usecase__boat">
-          <div class="usecase__boat-title">The boat</div>
-          <div class="usecase__specs">
-            <div class="usecase__spec"><span class="usecase__spec-label">Boat</span><span class="usecase__spec-val">45–52ft bluewater cruiser, 2000–2015</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Battery</span><span class="usecase__spec-val">600 Ah AGM @ 12V &mdash; 300 Ah usable</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Solar</span><span class="usecase__spec-val">400W rigid on arch + 50W wind gen &rarr; ~330W average</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Inverter</span><span class="usecase__spec-val">3,000W Victron MultiPlus</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Crew</span><span class="usecase__spec-val">2 adults, continuous cruising, Aegean + eastern Med</span></div>
-          </div>
-          <div class="usecase__loads">
-            <div class="usecase__loads-title">Daily power budget</div>
-            <div class="usecase__load"><span class="usecase__load-label">Fridge + standalone freezer</span><span class="usecase__load-val">~700 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Autopilot (continuous)</span><span class="usecase__load-val">~300 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Full nav suite + SSB</span><span class="usecase__load-val">~400 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Laptop + devices</span><span class="usecase__load-val">~250 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">LED lights + fans</span><span class="usecase__load-val">~150 Wh</span></div>
-            <div class="usecase__load usecase__load--total"><span class="usecase__load-label">Total daily</span><span class="usecase__load-val">~1,800 Wh</span></div>
-            <div class="usecase__load usecase__load--solar"><span class="usecase__load-label">Solar + wind (realistic)</span><span class="usecase__load-val">+1,450 Wh</span></div>
-            <div class="usecase__load usecase__load--deficit"><span class="usecase__load-label">Daily deficit</span><span class="usecase__load-val">&minus;350 Wh</span></div>
-          </div>
-          <div class="usecase__verdict">
-            <div class="usecase__verdict-label">Recommendation</div>
-            <div class="usecase__verdict-sku">ORB-2540 at 30–60 Hz</div>
-            <div class="usecase__verdict-text">Large bank absorbs the run easily. 300 Ah usable means the watermaker barely registers. Dial speed to match the day&apos;s solar. Engine charges everything on passage days.</div>
-          </div>
-        </div>
-        <div class="usecase__qa">
-          <div class="usecase__q">Do they ever need to run the engine just for the watermaker?</div>
-          <div class="usecase__a">Almost never. They are already motoring between anchorages every few days — the engine charges the bank, the alternator runs at full output, and they can run the watermaker simultaneously at no additional cost. On anchor days with good sun, the 300 Ah usable bank handles the ~70 Ah watermaker draw and still has 230 Ah in reserve by the time they go to sleep. Engine charging happens once a week at most.</div>
-
-          <div class="usecase__q">Can they dial the speed up on sunny days?</div>
-          <div class="usecase__a">Yes — and this is where variable speed pays off. At 45Hz the system draws ~900W and produces ~50 L/h. On a good solar day their panels put back ~280W, leaving ~620W net draw. Running for 1.5 hours produces 75 litres — a full day&apos;s supply for two people, done before lunch. On cloudy days they drop to 30Hz, run longer, and draw less per litre.</div>
-
-          <div class="usecase__q">What about hot water?</div>
-          <div class="usecase__a">Their calorifier (engine heat exchanger) gives them free hot water on passage days. At anchor, a 230V element in the calorifier — powered via the Victron MultiPlus on a sunny afternoon — heats 20 litres in about 30 minutes at 800W. 400 Wh from solar surplus: hot shower, zero fuel. This is the liveaboard advantage.</div>
-
-          <div class="usecase__q">What changes with lithium?</div>
-          <div class="usecase__a">A 300 Ah LiFePO4 bank (same weight as 150 Ah AGM) gives them the same usable energy as their 600 Ah AGM — but 100% of it is available. The watermaker run uses 22% of the bank at 30Hz instead of 47%. Solar fills it back up comfortably on most Med days. Some liveaboards report running the watermaker every day on sun alone after the lithium upgrade.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Panel 3: Catamaran -->
-    <div class="usecase__panel" data-panel="3">
-      <div class="usecase__card">
-        <div class="usecase__boat">
-          <div class="usecase__boat-title">The boat</div>
-          <div class="usecase__specs">
-            <div class="usecase__spec"><span class="usecase__spec-label">Boat</span><span class="usecase__spec-val">42–48ft catamaran, 2015–2022</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Battery</span><span class="usecase__spec-val">600 Ah AGM @ 12V &mdash; 300 Ah usable</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Solar</span><span class="usecase__spec-val">700W rigid on cat arch &rarr; ~455W realistic output</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Inverter</span><span class="usecase__spec-val">3,000W pure sine wave</span></div>
-            <div class="usecase__spec"><span class="usecase__spec-label">Crew</span><span class="usecase__spec-val">4–6 people, Ionian or Cyclades, extended anchor stays</span></div>
-          </div>
-          <div class="usecase__loads">
-            <div class="usecase__loads-title">Daily power budget</div>
-            <div class="usecase__load"><span class="usecase__load-label">Large fridge + freezer</span><span class="usecase__load-val">~700 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Cabin fans (4–6 cabins)</span><span class="usecase__load-val">~200 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Nav + autopilot</span><span class="usecase__load-val">~250 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Devices (6 people)</span><span class="usecase__load-val">~200 Wh</span></div>
-            <div class="usecase__load"><span class="usecase__load-label">Lights + windlass</span><span class="usecase__load-val">~230 Wh</span></div>
-            <div class="usecase__load usecase__load--total"><span class="usecase__load-label">Total daily</span><span class="usecase__load-val">~1,580 Wh</span></div>
-            <div class="usecase__load usecase__load--solar"><span class="usecase__load-label">Solar input (realistic)</span><span class="usecase__load-val">+2,275 Wh</span></div>
-            <div class="usecase__load usecase__load--surplus"><span class="usecase__load-label">Daily surplus</span><span class="usecase__load-val">+695 Wh &#9989;</span></div>
-          </div>
-          <div class="usecase__verdict">
-            <div class="usecase__verdict-label">Recommendation</div>
-            <div class="usecase__verdict-sku">ORB-2540 at 60 Hz</div>
-            <div class="usecase__verdict-text">Solar surplus covers day-to-day loads entirely. Run at full speed midday: 1.5h &rarr; ~100 L for 6 people. The catamaran is the one setup where solar-only watermaking is genuinely achievable.</div>
-          </div>
-        </div>
-        <div class="usecase__qa">
-          <div class="usecase__q">Is a catamaran really the only setup where solar covers everything?</div>
-          <div class="usecase__a">Almost. The arch on a 42–48ft cat holds 600–800W of rigid panels with a clean unobstructed sky view — no boom shadow, no sail shadow in the usual positions. At 65% realistic efficiency, 700W nominal yields ~455W. Over a 5-hour Med summer day: ~2,275 Wh. Total daily loads are ~1,580 Wh. That is a 695 Wh surplus — before the watermaker even runs. The watermaker run (1,400 Wh at 60Hz for 1 hour) temporarily dips the bank, but the surplus from the rest of the day fills it back. Engine optional.</div>
-
-          <div class="usecase__q">100 litres for 6 people — how long does it take?</div>
-          <div class="usecase__a">At 60Hz the system produces ~65–70 L/h. Run it for 1.5 hours and you get ~100 litres — about 16 litres per person. More than enough for cooking, drinking, and a proper rinse after snorkelling. Start the run at midday with the bank full from the morning sun, and the afternoon panels refill what the run used by sunset.</div>
-
-          <div class="usecase__q">What about the AC?</div>
-          <div class="usecase__a">The ORB-2540 draws 1,400W at 60Hz. Air conditioning on a cat draws 2,000–3,000W. Running both from the same inverter simultaneously is possible in theory — the inverter handles 3,000W — but you are asking 5,000W+ from the battery bank in one go. Better: run the watermaker at midday with no AC, then run AC in the evening when the bank is full and you are plugged into shore power or the engines are running.</div>
-
-          <div class="usecase__q">Do they still need to run the engines?</div>
-          <div class="usecase__a">Only to move between anchorages. Charging the bank from solar is sufficient for all loads including daily watermaking on sunny Med days. The alternators (2&times; 80A) charge the bank fast when motoring anyway. A 3-hour passage between islands typically tops everything up. Engine charging for battery purposes only: perhaps once every 7–10 days in prolonged bad weather.</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Specs -->
-<section class="section" id="specs">
-  <div class="container">
-    <div class="section__header">
-      <span class="eyebrow eyebrow--blue">Two models</span>
-      <h2 class="section__title">The right size for your boat</h2>
-      <p class="section__sub">Same pump, same motor, same build quality. Choose the membrane size that matches your water consumption and the space you have below.</p>
-    </div>
-
-    <div class="specs__grid">
-      <div class="spec-card spec-card--featured">
-        <div class="spec-card__header">
-          <div class="spec-card__sku">ORB-2540</div>
-          <div class="spec-card__name">Oroboro Standard</div>
-          <div class="spec-card__tagline">For sailing boats 38ft and above</div>
-        </div>
-        <div class="spec-card__body">
-          <div class="spec-row">
-            <span class="spec-row__label">Membrane</span>
-            <span class="spec-row__value">Seawater RO membrane, 2.5" × 40"</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">Peak output</span>
-            <span class="spec-row__value">65–70 L/h at 70 bar</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">HP pump</span>
-            <span class="spec-row__value">Italian ceramic plunger pump</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">Motor / drive</span>
-            <span class="spec-row__value">1.1 kW 3-phase + industrial VFD</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">Speed range</span>
-            <span class="spec-row__value">30–60 Hz — VFD adjustable</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">Power draw</span>
-            <span class="spec-row__value">700–1,500 W from battery bank (via inverter)</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">Efficiency</span>
-            <span class="spec-row__value">~20 Wh/L</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">HP valve</span>
-            <span class="spec-row__value">SS316L needle valve, 344 bar</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">Pre-filtration</span>
-            <span class="spec-row__value">Two-stage — 20µm + 5µm</span>
-          </div>
-        </div>
-        <div class="spec-card__footer">
-          <div>
-            <div class="spec-card__price">~€3,500–3,900</div>
-            <div class="spec-card__price-note">Estimated · prototype in progress</div>
-          </div>
-          <a href="#register" class="btn btn--gold">Notify me</a>
-        </div>
-      </div>
-
-      <div class="spec-card">
-        <div class="spec-card__header">
-          <div class="spec-card__sku">ORB-2521</div>
-          <div class="spec-card__name">Oroboro Compact</div>
-          <div class="spec-card__tagline">For sailing boats 30–37ft</div>
-        </div>
-        <div class="spec-card__body">
-          <div class="spec-row">
-            <span class="spec-row__label">Membrane</span>
-            <span class="spec-row__value">Seawater RO membrane, 2.5" × 21"</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">Peak output</span>
-            <span class="spec-row__value">25–35 L/h at 70 bar</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">HP pump</span>
-            <span class="spec-row__value">Italian ceramic plunger pump</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">Motor / drive</span>
-            <span class="spec-row__value">1.1 kW 3-phase + industrial VFD</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">Speed range</span>
-            <span class="spec-row__value">30–60 Hz — VFD adjustable</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">Power draw</span>
-            <span class="spec-row__value">700–1,500 W from battery bank (via inverter)</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">Efficiency</span>
-            <span class="spec-row__value">~40 Wh/L</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">HP valve</span>
-            <span class="spec-row__value">SS316L needle valve, 344 bar</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-row__label">Pre-filtration</span>
-            <span class="spec-row__value">Two-stage — 20µm + 5µm</span>
-          </div>
-        </div>
-        <div class="spec-card__footer">
-          <div>
-            <div class="spec-card__price">~€2,990</div>
-            <div class="spec-card__price-note">Estimated · prototype in progress</div>
-          </div>
-          <a href="#register" class="btn btn--primary">Notify me</a>
-        </div>
-      </div>
+    <div class="principles">
+      <div class="principle"><div class="principle__num">i.</div><h3>Light</h3><p>Composite pressure structures, not stainless plumbing. Carried aboard, not craned.</p></div>
+      <div class="principle"><div class="principle__num">ii.</div><h3>Closed</h3><p>One sealed unit, one cable, three hoses. Nothing to tune, nothing to tempt you.</p></div>
+      <div class="principle"><div class="principle__num">iii.</div><h3>Self-managing</h3><p>Rinses itself on schedule. Watches its own water quality. Tells you only what matters.</p></div>
     </div>
   </div>
 </section>
 
-<!-- Components -->
-<section class="section section--components" id="components">
-  <div class="container">
-    <div class="section__header">
-      <span class="eyebrow">The parts</span>
-      <h2 class="section__title">Off-the-shelf. Industrial grade. Global stock.</h2>
-      <p class="section__sub">Every component is a standard catalogue part from an established manufacturer. Nothing proprietary. Nothing that requires a specialist to source or replace.</p>
-    </div>
-
-    <div class="components__grid">
-      <div class="comp-card">
-        <img class="comp-card__img" src="motor.png" alt="Three-phase motor" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">Motor</div>
-          <div class="comp-card__spec">Industrial 1.1kW three-phase motor. Runs at full rated speed via the VFD, driven by your boat's 230V inverter.</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <img class="comp-card__img" src="AFD.png" alt="Variable frequency drive" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">Variable Frequency Drive</div>
-          <div class="comp-card__spec">Adjustable frequency drive — single-phase 230V in, three-phase 60Hz out. Soft start. Adjustable 30–60Hz for solar-only running.</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <img class="comp-card__img" src="HighPressurePump.png" alt="High pressure pump" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">High Pressure Pump</div>
-          <div class="comp-card__spec">Italian ceramic triplex plunger pump. Water-lubricated, no oil, no maintenance schedule.</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <img class="comp-card__img" src="pressurevessel.png" alt="Membrane pressure vessel" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">Membrane Vessel</div>
-          <div class="comp-card__spec">FRP 2540 format — 1,000 PSI rated. Holds any standard 2.5" × 40" seawater RO membrane element.</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <img class="comp-card__img" src="highpresssurevalve.png" alt="High pressure needle valve" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">HP Needle Valve</div>
-          <div class="comp-card__spec">SS316L high-pressure needle valve, 344 bar rated, 3/8" BSPP ports. Controls system pressure and output flow.</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <img class="comp-card__img" src="highpressuregauge.png" alt="High pressure gauge" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">Pressure Gauge</div>
-          <div class="comp-card__spec">Glycerine-filled 0–160 bar gauge. Reads operating pressure in real time — the primary instrument for setting and monitoring the system.</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <img class="comp-card__img" src="flowmeter.png" alt="Flow meter" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">Flow Meter</div>
-          <div class="comp-card__spec">Inline on permeate outlet. Reads L/min in real time. Tracks membrane health and confirms rated output.</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <img class="comp-card__img" src="TDS.png" alt="TDS meter" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">TDS Meter</div>
-          <div class="comp-card__spec">Hand-held digital probe. Measures permeate salinity in ppm. Target: under 500 ppm from open ocean seawater.</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <img class="comp-card__img" src="boostpump.png" alt="Boost pump" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">Boost Pump</div>
-          <div class="comp-card__spec">12V DC self-priming pump. Pulls seawater through the pre-filters and feeds the HP pump inlet at the right pressure.</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <img class="comp-card__img" src="filterhousing.png" alt="Pre-filter housings" loading="lazy">
-        <div class="comp-card__body">
-          <div class="comp-card__name">Pre-Filter Housings</div>
-          <div class="comp-card__spec">Big Blue 10" × 4.5". Two stage: 20µm then 5µm wound polypropylene. Protects the HP pump and membrane.</div>
-        </div>
-      </div>
+<!-- ——— REVEAL ——— -->
+<section class="reveal">
+  <div class="wrap">
+    <div class="eyebrow eyebrow--gold">Revealed</div>
+    <div class="reveal__big">Spring <span>2027</span></div>
+    <p class="reveal__sub">Designed in Athens. Tested in the Aegean. First boats fitted before the summer season.</p>
+    <div class="steps">
+      <div class="step step--on">Design</div>
+      <div class="step step--on">Prototype</div>
+      <div class="step">Sea trials</div>
+      <div class="step">Reveal</div>
     </div>
   </div>
 </section>
 
-<!-- Founder -->
-<section class="section section--founder">
-  <div class="container">
-    <div class="founder__inner">
-      <span class="eyebrow">The story</span>
-      <p class="founder__quote">We've done 30,000 miles across 4 continents and 2 oceans. We know what it's like to enter a Greek town quay in 30 knots of meltemi just to fill water tanks — the chaos, the shouting, the incidents. And the water you get? Half the time it tastes of salt. A good watermaker was always the answer, but the price was never justified. The pump comes from Italy, the membrane from a world-class manufacturer, the fittings from standard industrial suppliers — so we built one ourselves.</p>
-      <div class="founder__attr">
-        <div class="founder__avatar">FP</div>
-        <div class="founder__avatar" style="margin-left:-8px;">CK</div>
-        <div>
-          <div class="founder__name">Francesco &amp; Chris</div>
-          <div class="founder__role">Founders, Oroboro Watermaker LLC · Athens, Greece</div>
-        </div>
-      </div>
-    </div>
+<!-- ——— CAPTURE ——— -->
+<section class="capture" id="notify">
+  <div class="wrap">
+    <h2>Be on the boat that doesn't<br>queue for water.</h2>
+    <p>Leave your email. You will get one message when the next Oroboro is revealed, and a chance to be among the first boats fitted. Nothing else.</p>
+    <form class="form" id="notifyForm">
+      <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
+      <button type="submit">Be first to know</button>
+    </form>
+    <div class="success" id="formSuccess">You're on the list. One email, when it's time.</div>
+    <p class="fine">No spam. No sharing. Unsubscribe with one reply.</p>
   </div>
 </section>
 
-<!-- Name story -->
-<section class="section section--name">
-  <div class="container">
-    <div class="name__inner">
-      <span class="eyebrow">The name</span>
-      <h2 class="name__h">Oroboro.<br><span>The eternal cycle.</span></h2>
-      <div class="name__body">
-        <p><span class="name__greek">ουρόβορος</span>The ouroboros is an ancient Greek symbol — a serpent eating its own tail, forming a perfect circle. It represents the eternal cycle: self-renewal, endless return, the thing that feeds itself forever.</p>
-        <p>We chose it because a watermaker is the closest thing to that eternal cycle that exists aboard a boat. The sea is infinite. Our system draws from it as long as you sail. The water you make eventually returns to the sea. The cycle closes, and begins again.</p>
-        <p>It is also the simplest expression of what independence at sea actually means: not needing the shore for something as fundamental as drinking water. The serpent feeds itself. So do you.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section--cta" id="register">
-  <div class="container">
-    <div class="cta__inner">
-      <span class="eyebrow">Early interest</span>
-      <h2 class="cta__title">Skip the marina.<br>Make your own water.</h2>
-      <p class="cta__sub">Prototype testing is underway. First units are expected summer 2027. Leave your email and we will send you one message when the Oroboro is ready to order — nothing else.</p>
-
-      <form class="cta__form" id="notifyForm">
-        <input type="email" name="email" class="cta__input" placeholder="your@email.com" required>
-        <button type="submit" class="cta__submit">Notify me →</button>
-      </form>
-      <div class="cta__success" id="formSuccess">
-        You're on the list. We'll reach out when the Oroboro is ready to order.
-      </div>
-      <p class="cta__note">No spam. One email, when it's available.</p>
-
-      <div class="timeline">
-        <div class="timeline__step">
-          <div class="timeline__dot timeline__dot--done"></div>
-          <div class="timeline__label timeline__label--done">Design<br>complete</div>
-        </div>
-        <div class="timeline__step">
-          <div class="timeline__dot timeline__dot--done"></div>
-          <div class="timeline__label timeline__label--done">Prototype<br>testing</div>
-        </div>
-        <div class="timeline__step">
-          <div class="timeline__dot"></div>
-          <div class="timeline__label">First units<br>built</div>
-        </div>
-        <div class="timeline__step">
-          <div class="timeline__dot"></div>
-          <div class="timeline__label">Available<br>to order</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__brand">
-      <div class="footer__logo">
-        <img src="oroboro-logo-footer.png" class="footer__mark" alt="Oroboro">
-      </div>
-      <p class="footer__desc">Oroboro Watermaker LLC is a Wyoming company building industrial-grade marine RO watermakers for the Mediterranean cruising market.</p>
-    </div>
-
-    <div>
-      <div class="footer__col-title">Navigation</div>
-      <div class="footer__links">
-        <a href="#how" class="footer__link">How it works</a>
-        <a href="#features" class="footer__link">Why Oroboro</a>
-        <a href="#specs" class="footer__link">Specifications</a>
-        <a href="#register" class="footer__link">Register interest</a>
-      </div>
-    </div>
-
-    <div>
-      <div class="footer__col-title">Oroboro</div>
-      <div class="footer__links">
-        <a href="https://www.sailingoroboro.com" class="footer__link" target="_blank" rel="noopener">SailingOroboro.com</a>
-        <a href="mailto:info@sailingoroboro.com" class="footer__link">info@sailingoroboro.com</a>
-        <a href="#" class="footer__link">Wyoming, USA · Athens, Greece</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer__bottom">
-    <span class="footer__copy">© 2026 Oroboro Watermaker LLC. All rights reserved.</span>
-    <div class="footer__legal">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-    </div>
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 Oroboro Watermaker LLC · Wyoming, USA · Athens, Greece</span>
+    <span><a href="https://www.sailingoroboro.com" target="_blank" rel="noopener">SailingOroboro.com</a> &nbsp;·&nbsp; <a href="mailto:info@sailingoroboro.com">info@sailingoroboro.com</a></span>
   </div>
 </footer>
 
 <script>
-  // Use case tabs
-  document.querySelectorAll('.usecase__tab').forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      var idx = this.dataset.tab;
-      document.querySelectorAll('.usecase__tab').forEach(function(t) { t.classList.remove('active'); });
-      document.querySelectorAll('.usecase__panel').forEach(function(p) { p.classList.remove('active'); });
-      this.classList.add('active');
-      document.querySelector('.usecase__panel[data-panel="' + idx + '"]').classList.add('active');
-    });
-  });
-
   const form = document.getElementById('notifyForm');
   const success = document.getElementById('formSuccess');
-
-  form.addEventListener('submit', async function(e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
-    const btn = form.querySelector('.cta__submit');
+    const btn = form.querySelector('button');
     const email = form.querySelector('input[name="email"]').value;
     btn.textContent = 'Sending…';
     btn.disabled = true;
-
     try {
       const res = await fetch('https://formsubmit.co/ajax/c7b0f41fa2ea0487cf2b9b59d6913839', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          email: email,
-          _subject: 'Oroboro Watermaker — Interest Registration',
-          source: 'watermaker-teaser'
-        })
+        body: JSON.stringify({ email: email, _subject: 'Oroboro 12V — Teaser Interest', source: 'oroboro-12v-teaser' })
       });
-      if (res.ok) {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      } else {
-        throw new Error('non-ok');
-      }
-    } catch {
-      btn.textContent = 'Notify me →';
-      btn.disabled = false;
-      success.innerHTML = 'Something went wrong. Email us directly at <a href="mailto:fpugliano@gmail.com" style="color:inherit;text-decoration:underline;">fpugliano@gmail.com</a> to register.';
-      success.style.display = 'block';
+      if (!res.ok) throw new Error('non-ok');
       form.style.display = 'none';
+      success.style.display = 'block';
+    } catch (err) {
+      btn.textContent = 'Be first to know';
+      btn.disabled = false;
+      success.innerHTML = 'Something went wrong. Email us at <a href="mailto:info@sailingoroboro.com">info@sailingoroboro.com</a> and we will add you by hand.';
+      success.style.display = 'block';
     }
   });
 </script>
-
 </body>
 </html>
